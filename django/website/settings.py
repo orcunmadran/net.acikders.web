@@ -25,7 +25,7 @@ SECRET_KEY = '_v4&-w7n7hnn(!9*#8@)c4i+nk(fgk0iymp!x7@xs0%m(y9%p#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.acikders.net']
 
 
 # Application definition

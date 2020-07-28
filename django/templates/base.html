@@ -1,0 +1,35 @@
+{% load static %}
+<html lang="tr" class="h-100"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Açık Ders NET">
+    <meta name="author" content="Orçun Madran">
+    <title>acikders.net</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'base_files/bootstrap.min.css' %}">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'base_files/sticky-footer-navbar.css' %}">
+</head>
+  <body class="d-flex flex-column h-100">
+    <header>
+  {% include 'navbar.html' %}
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+  <div class="container">
+    {% block content %}
+      {% endblock %}
+  </div>
+</main>
+
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted">Place sticky footer content here.</span>
+  </div>
+</footer>
+    <script src="{% static 'base_files/jquery.js' %}"></script>
+    <script src="{% static 'base_files/bootstrap.js' %}"></script>
+</body></html>

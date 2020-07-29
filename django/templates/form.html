@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mt-5">:: Üst Veri Giriş Formu ::</h1>
+    <p class="lead">Aşağıdaki örnek üst veri giriş formu test amacıyla oluşturulmuştur.</p>
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="baslik" placeholder="Başlık">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="konu" placeholder="Konu">
+      </div>
+      <div class="form-group">
+        <select class="form-control">
+            <option>Türkçe</option>
+            <option>Almanca</option>
+            <option>İngilizce</option>
+            <option>Fransızca</option>
+            <option>Portekizce</option>
+            <option>Rusça</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="tanim" rows="3">Tanım</textarea>
+      </div>
+      <div class="form-group">
+        <input type="date" class="form-control" id="tarih" placeholder="Tarih">
+      </div>
+      <button type="submit" class="btn btn-primary">Üst veriyi oluştur!</button>
+    </form>
+    <p>Form çalışmaları için kaynak <a href="https://getbootstrap.com/docs/4.5/components/forms/?" target="_blank">doküman</a></p>
+{% endblock %}

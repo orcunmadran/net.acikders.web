@@ -2,16 +2,50 @@
 
 {% block content %}
     <h1 class="mt-5">:: Üst Veri Giriş Formu ::</h1>
-    <p class="lead">Aşağıdaki örnek üst veri giriş formu test amacıyla oluşturulmuştur.</p>
+    <p>Aşağıdaki örnek üst veri giriş formu test amacıyla oluşturulmuştur.</p>
     <form>
+      <p class="lead">İçerik</p>
       <div class="form-group">
-        <input type="text" class="form-control" id="baslik" placeholder="Başlık">
+        <input type="text" class="form-control" id="title" placeholder="Başlık">
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="konu" placeholder="Konu">
+        <input type="text" class="form-control" id="subject" placeholder="Konu">
       </div>
       <div class="form-group">
-        <select class="form-control">
+        <textarea class="form-control" id="description" rows="3">Tanım</textarea>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="source" placeholder="Kaynak">
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="type">
+            <option>Tip seçiniz</option>
+            <option>Collection</option>
+        </select>
+      </div>
+      <p class="lead">Entellektüel</p>
+      <div class="form-group">
+        <input type="text" class="form-control" id="creator" placeholder="Yaratıcı">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="publisher" placeholder="Yayıncı">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="contributor" placeholder="Katkı Sağlayan">
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="licence">
+            <option>Lisans seçiniz</option>
+            <option>CC-BY</option>
+        </select>
+      </div>
+      <p class="lead">Yapısal</p>
+      <div class="form-group">
+        <input type="date" class="form-control" id="date" placeholder="Tarih">
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="language">
+            <option>Dil seçiniz</option>
             <option>Türkçe</option>
             <option>Almanca</option>
             <option>İngilizce</option>
@@ -21,10 +55,23 @@
         </select>
       </div>
       <div class="form-group">
-        <textarea class="form-control" id="tanim" rows="3">Tanım</textarea>
+        <input type="text" class="form-control" id="format" placeholder="Biçim">
+      </div>
+      <p class="lead">Eğitimsel</p>
+      <div class="form-group">
+        <input type="text" class="form-control" id="educationalAudience" placeholder="Hedef Kitle">
       </div>
       <div class="form-group">
-        <input type="date" class="form-control" id="tarih" placeholder="Tarih">
+        <input type="text" class="form-control" id="educationalUse" placeholder="Eğitsel Kullanım">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="interactivityType" placeholder="Etkileşim Tipi">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="learningResourceType" placeholder="Öğrenim Kaynağı Tipi">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="timeRequired" placeholder="İhtiyaç Duyulan Süre">
       </div>
       <button type="submit" class="btn btn-primary">Üst veriyi oluştur!</button>
     </form>

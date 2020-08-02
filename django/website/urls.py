@@ -21,6 +21,7 @@ from pages import views
 urlpatterns = [
     path('', views.home_view, name='home'),
     path('form/', views.form_view, name='form'),
+    path('auto/', views.auto_view, name='auto'),
     path('basic/', views.basic_view, name='basic'),
     path('admin/', admin.site.urls),
 ]

@@ -14,5 +14,8 @@ def home_view(request, *args, **kwargs):
 def form_view(request, *args, **kwargs):
     return render(request, 'form.html')
 
+def auto_view(request, *args, **kwargs):
+    return render(request, 'auto.html')
+
 def basic_view(*args, **kwargs):
     return HttpResponse("<h1>TEST</h1><p><a href='javascript:history.back()'>Geri dön...</a></p>")

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mt-5">AEK Üst Veri</h1>
+    <p class="lead">Üst veriler:</p>
+    <ol>
+        <li>Başlık: {{ title }}</li>
+        <li>Konu: {{ subject }}</li>
+        <li>Tanım: {{ description }}</li>
+        <li>Tip: {{ type }}</li>
+        <li>Yaratıcı: {{ creator }}</li>
+        <li>Yayıncı: {{ publisher }}</li>
+        <li>Katkı Sağlayan: {{ contributor }}</li>
+        <li>Lisans: {{ license }}</li>
+        <li>Tarih: {{ date }}</li>
+        <li>Dil: {{ language }}</li>
+        <li>Biçim: {{ format }}</li>
+        <li>Tanımlayıcı: {{ identifier }}</li>
+        <li>Hedef Kitle: {{ educationalAudience}}</li>
+        <li>Eğitsel Kullanım: {{ educationalUse }}</li>
+        <li>Etkileşim Tipi: {{ interactivityType}}</li>
+        <li>Öğrenim Kaynağı Tipi: {{ learningResourceType }}</li>
+        <li>İhtiyaç Duyulan Süre: {{ timeRequired }}</li>
+    </ol>
+    <button class="btn btn-primary" onclick="goBack()">Veri giriş ekranına geri dön!</button>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+
+{% endblock %}

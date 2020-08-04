@@ -1,10 +1,17 @@
   $( function() {
         var availableTags = [
-          "PDF",
-          "DOC",
-          "XLS",
-          "PPT",
-          "MOV"
+            "ODF",
+            "PDF",
+            "DOC",
+            "DOCX",
+            "XLS",
+            "XLSX",
+            "PPT",
+            "PPTX",
+            "MP4",
+            "MP3",
+            "MOV",
+            "JPG"
         ];
         function split( val ) {
           return val.split( /,\s*/ );

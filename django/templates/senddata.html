@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <script>
+    function grup()
+    {
+      var x=document.getElementById("learningResourceType");
+      for (var i = 0; i < x.options.length; i++) {
+         if(x.options[i].selected ==true){
+              document.getElementById("sonuc").value += x.options[i].value + ", "
+          }
+      }
+    }
+    </script>
+
+    <h1 class="mt-5">AEK Üst Veri Giriş Formu</h1>
+    <p>Açık eğitim kaynağının üst verisini oluşturmak için aşağıdaki formu doldurunuz.<br>Zorunlu alanların yanında ( * ) işareti yer almaktadır.</p>
+    <form class="needs-validation" action="/getdata/" method="GET" novalidate>
+      <p class="lead">İçerik Bölümü</p>
+      <div class="form-group">
+        <label for="title">Başlık:</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+        <small id="titleHelp" class="form-text text-muted">Kaynağın başlığını tam olarak giriniz (*).</small>
+        <div class="invalid-feedback">
+          Lütfen bir başlık giriniz!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="title">Konu (Anahtar Kelime / Kelimeler):</label>
+        <input type="text" class="form-control" id="subject" name="subject" required>
+        <small id="subjectHelp" class="form-text text-muted">Kaynağın içeriğini tanımlayan anahtar kelimeleri virgül kullanarak giriniz (*).</small>
+        <div class="invalid-feedback">
+          Lütfen anahtar kelime giriniz!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="learningResourceType">Öğrenim Kaynağı Tipi:</label>
+        <select multiple class="form-control" id="learningResourceType" name="learningResourceType">
+          <option>Çalışma kağıdı</option>
+          <option>Sunum</option>
+          <option>...</option>
+          <option>...</option>
+        </select>
+        <small id="learningResourceTypeHelp" class="form-text text-muted">Kaynağın tanımlanmış öğrenim kaynağı tipi varsa seçiniz. CTRL kullanarak birden çok seçim yapabilirsiniz.</small>
+      </div>
+        <input type="hidden" id="sonuc" name="sonuc">
+      <button type="submit" class="btn btn-primary" onclick="grup()">Üst veriyi oluştur!</button>
+    </form>
+
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+{% endblock %}

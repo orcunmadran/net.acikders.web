@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     <h1 class="mt-5">AEK Üst Veri</h1>
     <p class="lead">Üst veriler:</p>
     <ol>
@@ -22,6 +23,15 @@
         <li>Öğrenim Kaynağı Tipi: {{ learningResourceType }}</li>
         <li>İhtiyaç Duyulan Süre: {{ timeRequired }}</li>
     </ol>
+    <form>
+        <div class="form-group">
+        <label for="metaHTML">Üst Veri:</label>
+        <textarea class="form-control" id="metaHTML" name="metaHTML" rows="5">
+<p><a href="{{ identifier }}" target="_blank">{{ title }}</a>, {{ creator }} tarafından {{ contributor }} katkılarıyla {{ date }} tarihinde oluşturulmuş ve {{ license }} ile lisanslanmıştır.</p>
+        </textarea>
+        <small id="descriptionHelp" class="form-text text-muted">Hazırlanmış olan üst veriyi kopyalayıp kendi sayfanıza yerleştirebilirsiniz.</small>
+      </div>
+    </form>
     <button class="btn btn-primary" onclick="goBack()">Veri giriş ekranına geri dön!</button>
     <script>
     function goBack() {

@@ -30,6 +30,8 @@ def metadata_view(request, *args, **kwargs):
         "publisher":request.POST.get('publisher'),
         "contributor":request.POST.get('contributor'),
         "license":request.POST.get('license'),
+        "ccLicenseURL": request.POST.get('ccLicenseURL'),
+        "ccLicenseIcon": request.POST.get('ccLicenseIcon'),
         "date":request.POST.get('date'),
         "language":request.POST.get('language'),
         "format":request.POST.get('format'),

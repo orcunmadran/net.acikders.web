@@ -8,9 +8,18 @@
         <div class="form-group">
         <label for="metaHTML">AEK Üst Veri Seti:</label>
         <textarea class="form-control" id="metaHTML" name="metaHTML" rows="5">
-            <p>
-                <a href="{{ identifier }}" target="_blank">{{ title }}</a>, {{ creator }} tarafından {{ contributor }} katkılarıyla {{ date }} tarihinde oluşturulmuş ve {{ license }} ile lisanslanmıştır.
-            </p>
+        <!-- Açık Ders NET Açık Eğitim Kaynağı (AEK) Üst Verisi -->
+        <p
+            xmlns:dct="http://purl.org/dc/terms/"
+            xmlns:dcx="http://purl.org/dcx/lrmi-terms/"
+            xmlns:cc="http://creativecommons.org/ns"
+            xmlns:adn="http://acikders.net/ns">
+            <a rel="dct:identifier" property="dct:title" href="{{ identifier }}">{{ title }}</a> açık eğitim kaynağı,
+            <span property="dct:creator">{{ creator }}</span> tarafından
+            <a rel="cc:license" href="{{ ccLicenseURL }}" target="_blank">{{ license }}</a> ile lisanslanmıştır.
+            {{ ccLicenseIcon }}
+        </p>
+        <!-- AEK üst veri seti ile ilgili detaylı bilgi için: acikders.net -->
         </textarea>
         <small id="descriptionHelp" class="form-text text-muted">Hazırlanmış olan üst veriyi kopyalayıp kendi sayfanıza yerleştirebilirsiniz.</small>
       </div>
@@ -35,8 +44,9 @@
     </script>
     <hr>
     <p class="lead">Girmiş olduğunuz üst verilerin listesi:</p>
-    <table class="table">
-      <thead>
+    <div class="table-responsive-sm">
+    <table class="table table-striped">
+      <thead class="thead-dark">
         <tr>
           <th scope="col">No</th>
           <th scope="col">Üst Veri</th>
@@ -131,6 +141,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <button class="btn btn-primary" onclick="goBack()">Veri giriş ekranına geri dön!</button>
     <script>
     function goBack() {

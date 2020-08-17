@@ -3,40 +3,139 @@
 {% block content %}
 
     <h1 class="mt-5">AEK Üst Veri</h1>
-    <p class="lead">Üst veriler:</p>
-    <ol>
-        <li>Başlık: {{ title }}</li>
-        <li>Konu: {{ subject }}</li>
-        <li>Tanım: {{ description }}</li>
-        <li>Tip: {{ type }}</li>
-        <li>Yaratıcı: {{ creator }}</li>
-        <li>Yayıncı: {{ publisher }}</li>
-        <li>Katkı Sağlayan: {{ contributor }}</li>
-        <li>Lisans: {{ license }}</li>
-        <li>Tarih: {{ date }}</li>
-        <li>Dil: {{ language }}</li>
-        <li>Biçim: {{ format }}</li>
-        <li>Tanımlayıcı: {{ identifier }}</li>
-        <li>Hedef Kitle: {{ educationalAudience}}</li>
-        <li>Eğitsel Kullanım: {{ educationalUse }}</li>
-        <li>Etkileşim Tipi: {{ interactivityType}}</li>
-        <li>Öğrenim Kaynağı Tipi: {{ learningResourceType }}</li>
-        <li>İhtiyaç Duyulan Süre: {{ timeRequired }}</li>
-    </ol>
+    <p class="lead">Girmiş olduğunuz üst verilere göre oluşturulmuş olan Açık Eğitim Kaynağı üst verisi aşağıda yer almaktadır.</p>
     <form>
         <div class="form-group">
-        <label for="metaHTML">Üst Veri:</label>
+        <label for="metaHTML">AEK Üst Veri Seti:</label>
         <textarea class="form-control" id="metaHTML" name="metaHTML" rows="5">
-<p><a href="{{ identifier }}" target="_blank">{{ title }}</a>, {{ creator }} tarafından {{ contributor }} katkılarıyla {{ date }} tarihinde oluşturulmuş ve {{ license }} ile lisanslanmıştır.</p>
+            <p>
+                <a href="{{ identifier }}" target="_blank">{{ title }}</a>, {{ creator }} tarafından {{ contributor }} katkılarıyla {{ date }} tarihinde oluşturulmuş ve {{ license }} ile lisanslanmıştır.
+            </p>
         </textarea>
         <small id="descriptionHelp" class="form-text text-muted">Hazırlanmış olan üst veriyi kopyalayıp kendi sayfanıza yerleştirebilirsiniz.</small>
       </div>
     </form>
+    <button class="btn btn-primary" onclick="copyHTML()">HTML kodunu kopyala!</button>
+    <script>
+    function copyHTML() {
+        /* Get the text field */
+        var copyText = document.getElementById("metaHTML");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("HTML Kopyalandı");
+        //alert("Copied the text: " + copyText.value);
+    }
+    </script>
+    <hr>
+    <p class="lead">Girmiş olduğunuz üst verilerin listesi:</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Üst Veri</th>
+          <th scope="col">Değer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Başlık</td>
+          <td>{{ title }}</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Konu</td>
+          <td>{{ subject }}</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Tanım</td>
+          <td>{{ description }}</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Tip</td>
+          <td>{{ type }}</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Yaratıcı</td>
+          <td>{{ creator }}</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>Yayıncı</td>
+          <td>{{ publisher }}</td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td>Katkı Sağlayan</td>
+          <td>{{ contributor }}</td>
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td>Lisans</td>
+          <td>{{ license }}</td>
+        </tr>
+        <tr>
+          <th scope="row">9</th>
+          <td>Tarih</td>
+          <td>{{ date }}</td>
+        </tr>
+        <tr>
+          <th scope="row">10</th>
+          <td>Dil</td>
+          <td>{{ language }}</td>
+        </tr>
+        <tr>
+          <th scope="row">11</th>
+          <td>Format</td>
+          <td>{{ format }}</td>
+        </tr>
+        <tr>
+          <th scope="row">12</th>
+          <td>Tanımlayıcı</td>
+          <td>{{ identifier }}</td>
+        </tr>
+        <tr>
+          <th scope="row">13</th>
+          <td>Hedef Kitle</td>
+          <td>{{ educationalAudience}}</td>
+        </tr>
+        <tr>
+          <th scope="row">14</th>
+          <td>Eğitsel Kullanım</td>
+          <td>{{ educationalUse }}</td>
+        </tr>
+        <tr>
+          <th scope="row">15</th>
+          <td>Etkileşim Tipi</td>
+          <td>{{ interactivityType}}</td>
+        </tr>
+        <tr>
+          <th scope="row">16</th>
+          <td>Öğrenim Kaynağı Tipi</td>
+          <td>{{ learningResourceType }}</td>
+        </tr>
+        <tr>
+          <th scope="row">17</th>
+          <td>İhtiyaç Duyulan Süre</td>
+          <td>{{ timeRequired }}</td>
+        </tr>
+      </tbody>
+    </table>
     <button class="btn btn-primary" onclick="goBack()">Veri giriş ekranına geri dön!</button>
     <script>
     function goBack() {
       window.history.back();
     }
     </script>
-
+    <br><br>
 {% endblock %}

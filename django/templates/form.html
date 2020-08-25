@@ -160,14 +160,8 @@
       <div class="form-group">
         <label for="date">Kaynağın Dili:</label>
         <select class="form-control" id="language" name="language">
-            <option selected disabled value="">Seçiniz...</option>
-            <option>Türkçe</option>
-            <option>Almanca</option>
-            <option>İngilizce</option>
-            <option>Fransızca</option>
-            <option>Portekizce</option>
-            <option>Rusça</option>
-            <option>Diğer</option>
+            <option selected disabled value="Dil tanımlanmadı!">Seçiniz...</option>
+            {% include 'lang.html' %}
         </select>
       </div>
       <div class="form-group">

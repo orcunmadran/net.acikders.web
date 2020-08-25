@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mt-5">AEK Üst Veri Şeması</h1>
+    <p class="lead">Proje kapsamında geliştirilen AEK üst veri şeması:</p>
+    <div class="table-responsive-sm">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th class="text-nowrap" scope="col">No</th>
+          <th class="text-nowrap" scope="col">Source</th>
+          <th class="text-nowrap" scope="col">Term Name</th>
+          <th class="text-nowrap" scope="col">Definition</th>
+          <th class="text-nowrap" scope="col">İfade Adı</th>
+          <th class="text-nowrap" scope="col">Tanım</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/title" target="_blank">Title</a></td>
+          <td>A name given to the resource.</td>
+          <td>Başlık</td>
+          <td>Kaynağa verilen isim</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/subject" target="_blank">Subject</a></td>
+          <td>The topic of the resource.</td>
+          <td>Konu</td>
+          <td>Kaynağın konusu</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/description" target="_blank">Description</a></td>
+          <td>An account of the resource.</td>
+          <td>Tanım</td>
+          <td>Kaynağın içeriği hakkında bilgi veren özet, grafik anlatım, düz metin vb.</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/type" target="_blank">Type</a></td>
+          <td>The nature or genre of the resource.</td>
+          <td>Tip</td>
+          <td>Kaynağın türü</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/creator" target="_blank">Creator</a></td>
+          <td>An entity primarily responsible for making the resource.</td>
+          <td>Yaratıcı</td>
+          <td>Kaynağın içeriğinden 1. derecede sorumlu kişiler ya da kuruluşlar</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/publisher" target="_blank">Publisher</a></td>
+          <td>An entity responsible for making the resource available.</td>
+          <td>Yayıncı</td>
+          <td>Kaynağı kullanıma sunmaktan sorumlu kuruluş.</td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/contributor" target="_blank">Contributer</a></td>
+          <td>An entity responsible for making contributions to the resource.</td>
+          <td>Katkı Sağlayan</td>
+          <td>Kaynağın içeriğine 2. derecede katkıda bulunan kişi ya da kuruluş.</td>
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td>CC</td>
+          <td><a href="https://creativecommons.org/ns#License" target="_blank">License</a></td>
+          <td>A set of requests/permissions to users of a Work, e.g. a copyright license, the public domain, information for distributors</td>
+          <td>Lisans</td>
+          <td>Bir Çalışmanın kullanıcılarına yönelik bir dizi istek / izin.</td>
+        </tr>
+        <tr>
+          <th scope="row">9</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/date" target="_blank">Date</a></td>
+          <td>A point or period of time associated with an event in the lifecycle of the resource.</td>
+          <td>Tarih</td>
+          <td>Kaynağın yaşam döngüsündeki önemli bir olay veya belirli bir süre.</td>
+        </tr>
+        <tr>
+          <th scope="row">10</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/language" target="_blank">Language</a></td>
+          <td>A language of the resource.</td>
+          <td>Dil</td>
+          <td>Kaynağın dili/td>
+        </tr>
+        <tr>
+          <th scope="row">11</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/format" target="_blank">Format</a></td>
+          <td>The file format, physical medium, or dimensions of the resource.</td>
+          <td>Biçim</td>
+          <td>Kaynağın dosya biçimi, fiziksel ortamı veya boyutları.</td>
+        </tr>
+        <tr>
+          <th scope="row">12</th>
+          <td>DCMI</td>
+          <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/elements/1.1/identifier" target="_blank">Identifier</a></td>
+          <td>An unambiguous reference to the resource within a given context.</td>
+          <td>Tanımlayıcı</td>
+          <td>URL, URN gibi kaynağı tanımlayıcı bir referans bilgisi ya da adres.</td>
+        </tr>
+        <tr>
+          <th scope="row">13</th>
+          <td>LRMI</td>
+          <td><a href="https://www.dublincore.org/specifications/lrmi/lrmi_terms/#EducationalAudience" target="_blank">Educational Audience</a></td>
+          <td>An individual or group for whom the learning resource was created or useful.</td>
+          <td>Hedef Kitle</td>
+          <td>Öğrenim kaynağının yaratıldığı ya da faydalı olacağı kişi ya da grup.</td>
+        </tr>
+        <tr>
+          <th scope="row">14</th>
+          <td>LRMI</td>
+          <td><a href="https://www.dublincore.org/specifications/lrmi/lrmi_terms/#educationalUse" target="_blank">Educational Use</a></td>
+          <td>The purpose of a work in the context of education.</td>
+          <td>Eğitsel Kullanım</td>
+          <td>Eğitim bağlamında çalışmanın ne amaçla kullanılacağı.</td>
+        </tr>
+        <tr>
+          <th scope="row">15</th>
+          <td>LRMI</td>
+          <td><a href="https://www.dublincore.org/specifications/lrmi/lrmi_terms/#interactivityType" target="_blank">Interactivity Type</a></td>
+          <td>The predominant mode of learning supported by the learning resource.</td>
+          <td>Etkileşim Tipi</td>
+          <td>Öğrenme kaynağı tarafından desteklenen baskın öğrenme yöntemi.</td>
+        </tr>
+        <tr>
+          <th scope="row">16</th>
+          <td>LRMI</td>
+          <td><a href="https://www.dublincore.org/specifications/lrmi/lrmi_terms/#timeRequired" target="_blank">Time Required</a></td>
+          <td>Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience.</td>
+          <td>İhtiyaç Duyulan Süre</td>
+          <td>Hedef kitlenin bu öğrenme kaynağını tamamlamak için ihtiyaç duyduğu süre.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+{% endblock %}

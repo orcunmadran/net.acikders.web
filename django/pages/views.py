@@ -9,6 +9,9 @@ def home_view(request, *args, **kwargs):
 def form_view(request, *args, **kwargs):
     return render(request, 'form.html')
 
+def sema_view(request, *args, **kwargs):
+    return render(request, 'sema.html')
+
 def senddata_view(request, *args, **kwargs):
     return render(request, 'senddata.html')
 

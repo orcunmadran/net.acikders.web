@@ -20,6 +20,7 @@ from pages import views
 
 urlpatterns = [
     path('', views.home_view, name='home'),
+    path('sema/', views.sema_view, name='sema'),
     path('form/', views.form_view, name='form'),
     path('senddata/', views.senddata_view, name='senddata'),
     path('getdata/', views.getdata_view, name='getdata'),

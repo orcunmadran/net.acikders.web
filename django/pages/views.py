@@ -22,25 +22,24 @@ def getdata_view(request, *args, **kwargs):
 
 def metadata_view(request, *args, **kwargs):
     formveri = {
-        "title":request.POST.get('title'),
-        "subject":request.POST.get('subject'),
-        "description":request.POST.get('description'),
-        "type":request.POST.get('type'),
-        "creator":request.POST.get('creator'),
-        "publisher":request.POST.get('publisher'),
-        "contributor":request.POST.get('contributor'),
-        "license":request.POST.get('license'),
+        "title":request.POST.get('title'), #1
+        "subject":request.POST.get('subject'), #2
+        "description":request.POST.get('description'), #3
+        "type":request.POST.get('type'), #4
+        "creator":request.POST.get('creator'), #5
+        "publisher":request.POST.get('publisher'), #6
+        "contributor":request.POST.get('contributor'), #7
+        "license":request.POST.get('license'), #8
         "ccLicenseURL": request.POST.get('ccLicenseURL'),
         "ccLicenseIcon": request.POST.get('ccLicenseIcon'),
-        "date":request.POST.get('date'),
-        "language":request.POST.get('language'),
-        "format":request.POST.get('format'),
-        "identifier":request.POST.get('identifier'),
-        "educationalAudience":request.POST.get('educationalAudience'),
-        "educationalUse":request.POST.get('educationalUse'),
-        "interactivityType":request.POST.get('interactivityType'),
-        "learningResourceType":request.POST.get('learningResourceType'),
-        "timeRequired":request.POST.get('timeRequired')
+        "date":request.POST.get('date'), #9
+        "language":request.POST.get('language'), #10
+        "format":request.POST.get('format'), #11
+        "identifier":request.POST.get('identifier'), #12
+        "educationalAudience":request.POST.get('educationalAudience'), #13
+        "educationalUse":request.POST.get('educationalUse'), #14
+        "interactivityType":request.POST.get('interactivityType'), #15
+        "timeRequired":request.POST.get('timeRequired') #16
     }
     return render(request, 'metadata.html', formveri)
 

@@ -5,102 +5,19 @@
 <!-- JS Otomatik tamamlama -->
 <script src="/static/base_files/formatList.js"></script>
 
-<!-- JS Grup -->
-<script>
-    function jsGrup()
-    {
-      <!-- CC Lisans URL ve İkonlar -->
-      var ccLicense = document.getElementById("license").value;
-      switch(ccLicense){
-          case "CC 0":
-          document.getElementById("ccLicenseURL").value = "https://creativecommons.org/publicdomain/zero/1.0/deed";
-          document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc0.svg?ref=chooser-v1" />'
-          break;
-          case "CC BY":
-          document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by/4.0/";
-          document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" />'
-          break;
-          case "CC BY-SA":
-          document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-sa/4.0/";
-          document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" />'
-          break;
-          case "CC BY-NC":
-          document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-nc/4.0/";
-          document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" />'
-          break;
-          case "CC BY-NC-SA":
-          break;
-          document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
-          document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" />'
-          break;
-          case "CC BY-ND":
-          document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-nd/4.0/";
-          document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" />'
-          break;
-          case "CC BY-NC-ND":
-          document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
-          document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" />'
-      }
-
-      // Multiple Select TYPE
-      document.getElementById("type2").value = "";
-      var grupType=document.getElementById("type");
-      for (var i1 = 0; i1 < grupType.options.length; i1++) {
-         if(grupType.options[i1].selected ==true){
-              document.getElementById("type2").value += grupType.options[i1].value + ", "
-          }
-      }
-
-      // Checked Box - Educational Audience
-      document.getElementById("educationalAudience2").value = "";
-      var eaA=document.getElementById("educationalAudienceA");
-      if(eaA.checked == true){
-        document.getElementById("educationalAudience2").value += eaA.value + ", "
-      }
-      var eaB=document.getElementById("educationalAudienceB");
-      if(eaB.checked == true){
-        document.getElementById("educationalAudience2").value += eaB.value + ", "
-      }
-      var eaC=document.getElementById("educationalAudienceC");
-      if(eaC.checked == true){
-        document.getElementById("educationalAudience2").value += eaC.value + ", "
-      }
-      var eaD=document.getElementById("educationalAudienceD");
-      if(eaD.checked == true){
-        document.getElementById("educationalAudience2").value += eaD.value + ", "
-      }
-      var eaE=document.getElementById("educationalAudienceE");
-      if(eaE.checked == true){
-        document.getElementById("educationalAudience2").value += eaE.value + ", "
-      }
-
-      // Checked Box - Educational Use
-      document.getElementById("educationalUse2").value = "";
-      var euA=document.getElementById("educationalUseA");
-      if(euA.checked == true){
-        document.getElementById("educationalUse2").value += euA.value + ", "
-      }
-      var euB=document.getElementById("educationalUseB");
-      if(euB.checked == true){
-        document.getElementById("educationalUse2").value += euB.value + ", "
-      }
-      var euC=document.getElementById("educationalUseC");
-      if(euC.checked == true){
-        document.getElementById("educationalUse2").value += euC.value + ", "
-      }
-    }
-</script>
+<!-- JS Group Functions -->
+<script src="/static/base_files/jsGroup.js"></script>
 
     <h1 class="mt-5">AEK Üst Veri Giriş Formu</h1>
-    <p>Açık eğitim kaynağının üst verisini oluşturmak için aşağıdaki formu doldurunuz.<br>Zorunlu alanların yanında ( * ) işareti yer almaktadır.</p>
+<p>Açık eğitim kaynağının üst verisini oluşturmak için aşağıdaki formu doldurunuz.<br>Zorunlu alanların yanında ( <strong><span class="text-danger">*</span></strong> ) işareti yer almaktadır.</p>
     <form class="needs-validation" action="/metadata/" method="post" novalidate>
       {% csrf_token %}
-      <p class="lead p-2 mb-2 bg-light text-dark">İçerik Bölümü</p>
+      <p class="lead p-2 mb-2 bg-light text-dark">İçerik</p>
       <div class="form-row">
       <div class="form-group col-md-6">
         <label for="title">Başlık:</label>
         <input type="text" class="form-control" id="title" name="title" required>
-        <small id="titleHelp" class="form-text text-muted">Kaynağın başlığını tam olarak giriniz (*).</small>
+        <small id="titleHelp" class="form-text text-muted">Kaynağın başlığını tam olarak giriniz. <strong><span class="text-danger">*</span></strong></small>
         <div class="invalid-feedback">
           Lütfen bir başlık giriniz!
         </div>
@@ -108,7 +25,7 @@
       <div class="form-group col-md-6">
         <label for="title">Konu (Anahtar Kelime / Kelimeler):</label>
         <input type="text" class="form-control" id="subject" name="subject" required>
-        <small id="subjectHelp" class="form-text text-muted">Kaynağın içeriğini tanımlayan anahtar kelimeleri virgül kullanarak giriniz (*).</small>
+        <small id="subjectHelp" class="form-text text-muted">Kaynağın içeriğini tanımlayan anahtar kelimeleri virgül kullanarak giriniz. <strong><span class="text-danger">*</span></strong></small>
         <div class="invalid-feedback">
           Lütfen anahtar kelime giriniz!
         </div>
@@ -118,7 +35,7 @@
       <div class="form-group col-md-6">
         <label for="description">Kaynağı Kısaca Tanımlayınız / Özet Bilgi Veriniz:</label>
         <textarea class="form-control" id="description" name="description" rows="11" required></textarea>
-        <small id="descriptionHelp" class="form-text text-muted">Kaynağın içeriği hakkında bilgi veren özet metni giriniz (*).</small>
+        <small id="descriptionHelp" class="form-text text-muted">Kaynağın içeriği hakkında bilgi veren özet metni giriniz. <strong><span class="text-danger">*</span></strong></small>
         <div class="invalid-feedback">
           Lütfen kaynak hakkında özet bilgi giriniz!
         </div>
@@ -139,7 +56,7 @@
             <option>Veri seti</option>
             <option>Yazılım</option>
           </select>
-        <small id="typeHelp" class="form-text text-muted">CTRL kullanarak birden çok seçim yapabilirsiniz (*).</small>
+        <small id="typeHelp" class="form-text text-muted">CTRL kullanarak birden çok seçim yapabilirsiniz. <strong><span class="text-danger">*</span></strong></small>
         <div class="invalid-feedback">
           Lütfen en az bir kaynak tipi seçiniz!
         </div>
@@ -151,20 +68,20 @@
       <div class="form-group col-md-4">
         <label for="creator">Yaratıcı(lar) (Yazar / Eğitmen / Tüzel Kuruluş):</label>
         <input type="text" class="form-control" id="creator" name="creator" required>
-        <small id="creatorHelp" class="form-text text-muted">Kaynağın oluşturulmasından 1. derecede sorumlu olan kişi ya da kuruluş bilgisi giriniz. Virgül kullanarak birden çok giriş yapabilirsiniz (*).</small>
+        <small id="creatorHelp" class="form-text text-muted">Kaynağın oluşturulmasından 1. derecede sorumlu olan kişi ya da kuruluş bilgisi giriniz. <strong><span class="text-danger">*</span></strong> <br> - Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
         <div class="invalid-feedback">
           Lütfen kişi ya da kuruluş bilgisi giriniz!
         </div>
       </div>
       <div class="form-group col-md-4">
-        <label for="publisher">Yayıncı:</label>
+        <label for="publisher">Yayıncı(lar):</label>
         <input type="text" class="form-control" id="publisher" name="publisher">
-        <small id="publisherHelp" class="form-text text-muted">Varsa kaynağın yayınlanmasından 1. derecede sorumlu olan kişi ya da kuruluş bilgisi giriniz. Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
+        <small id="publisherHelp" class="form-text text-muted">Varsa kaynağın yayınlanmasından 1. derecede sorumlu olan kişi ya da kuruluş bilgisi giriniz. <br> - Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
       </div>
       <div class="form-group col-md-4">
         <label for="contributor">Katkı Sağlayan(lar):</label>
         <input type="text" class="form-control" id="contributor" name="contributor">
-        <small id="contributorHelp" class="form-text text-muted">Varsa kaynağın oluşturulmasından 2. derecede sorumlu olan kişi ya da kuruluş bilgisi giriniz. Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
+        <small id="contributorHelp" class="form-text text-muted">Varsa kaynağın oluşturulmasından 2. derecede sorumlu olan kişi ya da kuruluş bilgisi giriniz. <br> - Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
       </div>
       </div>
       <div class="form-group">
@@ -179,7 +96,7 @@
           <option value="CC BY-ND">CC BY-ND (Atıf, Türetilemez)</option>
           <option value="CC BY-NC-ND">CC BY-NC-ND (Atıf, Gayri Ticari, Türetilemez)</option>
         </select>
-        <small id="licenseHelp" class="form-text text-muted">Kaynağın lisanslandığı Creative Commons (CC) lisansını seçiniz (*). Lisanslarla ilgili bilgi için <a href="https://creativecommons.org/about/cclicenses/" target="_blank">tıklayınız</a>.</small>
+        <small id="licenseHelp" class="form-text text-muted">Kaynağın lisanslandığı Creative Commons (CC) lisansını seçiniz. <strong><span class="text-danger">*</span></strong> Lisanslarla ilgili bilgi için <a href="https://creativecommons.org/about/cclicenses/" target="_blank">tıklayınız</a>.</small>
         <div class="invalid-feedback">
           Lütfen lisans seçiniz!
         </div>
@@ -210,7 +127,7 @@
       <div class="form-group col-md-6">
         <label for="identifier">Kaynağı Tanımlayıcı Adres (URL):</label>
         <input type="url" class="form-control" id="identifier" name="identifier" value="http://" required>
-        <small id="identifierHelp" class="form-text text-muted">Kaynağın erişilebileceği internet adresini giriniz.</small>
+        <small id="identifierHelp" class="form-text text-muted">Kaynağın erişilebileceği internet adresini ("http://" ya da "https://" ön eki ile birlikte) giriniz. <strong><span class="text-danger">*</span></strong></small>
         <div class="invalid-feedback">
           Lütfen geçerli bir internet adresi giriniz!
         </div>

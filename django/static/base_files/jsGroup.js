@@ -79,6 +79,10 @@ function jsGrup()
       if(euC.checked == true){
         document.getElementById("educationalUse2").value += euC.value + ", "
       }
+      var euD=document.getElementById("educationalUseD");
+      if(euD.checked == true){
+        document.getElementById("educationalUse2").value += euD.value + ", "
+      }
     }
 
 /*

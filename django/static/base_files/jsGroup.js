@@ -80,3 +80,21 @@ function jsGrup()
         document.getElementById("educationalUse2").value += euC.value + ", "
       }
     }
+
+/*
+      // Checked Box - Interactivity Type
+      document.getElementById("interactivityType2").value = "";
+      var itA=document.getElementById("interactivityTypeA");
+      if(itA.checked == true){
+        document.getElementById("interactivityType2").value += itA.value + ", "
+      }
+      var itB=document.getElementById("interactivityTypeB");
+      if(itB.checked == true){
+        document.getElementById("interactivityType2").value += itB.value + ", "
+      }
+      var itC=document.getElementById("interactivityTypeC");
+      if(itC.checked == true){
+        document.getElementById("interactivityType2").value += itC.value + ", "
+      }
+    }
+*/

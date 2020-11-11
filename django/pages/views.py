@@ -6,22 +6,14 @@ from django.shortcuts import render
 def home_view(request, *args, **kwargs):
     return render(request, 'home.html')
 
+def test_view(request, *args, **kwargs):
+    return render(request, 'test.html')
+
 def form_view(request, *args, **kwargs):
     return render(request, 'form.html')
 
 def sema_view(request, *args, **kwargs):
     return render(request, 'sema.html')
-
-def senddata_view(request, *args, **kwargs):
-    return render(request, 'senddata.html')
-
-def getdata_view(request, *args, **kwargs):
-    formveri = {
-        "title":request.GET.get('title'),
-        "subject":request.GET.get('subject'),
-        "learningResourceType":request.GET.get('sonuc'),
-    }
-    return render(request, 'getdata.html', formveri)
 
 def metadata_view(request, *args, **kwargs):
     formveri = {
@@ -45,9 +37,6 @@ def metadata_view(request, *args, **kwargs):
         "timeRequired":request.POST.get('timeRequired') #16
     }
     return render(request, 'metadata.html', formveri)
-
-def auto_view(request, *args, **kwargs):
-    return render(request, 'auto.html')
 
 def basic_view(*args, **kwargs):
     return HttpResponse("<h1>TEST</h1><p><a href='javascript:history.back()'>Geri dön...</a></p>")

@@ -1,27 +1,9 @@
   $( function() {
         var availableTags = [
-          "ActionScript",
-          "AppleScript",
-          "Asp",
-          "BASIC",
-          "C",
-          "C++",
-          "Clojure",
-          "COBOL",
-          "ColdFusion",
-          "Erlang",
-          "Fortran",
-          "Groovy",
-          "Haskell",
-          "Java",
-          "JavaScript",
-          "Lisp",
-          "Perl",
-          "PHP",
-          "Python",
-          "Ruby",
-          "Scala",
-          "Scheme"
+            "Bilişim",
+            "Matematik",
+            "Tasarım",
+            "Sanat"
         ];
         function split( val ) {
           return val.split( /,\s*/ );
@@ -30,7 +12,7 @@
           return split( term ).pop();
         }
 
-        $( "#tags" )
+        $( "#subject" )
           // don't navigate away from the field on tab when selecting an item
           .on( "keydown", function( event ) {
             if ( event.keyCode === $.ui.keyCode.TAB &&
@@ -39,11 +21,17 @@
             }
           })
           .autocomplete({
-            minLength: 0,
             source: function( request, response ) {
               // delegate back to autocomplete, but extract the last term
               response( $.ui.autocomplete.filter(
                 availableTags, extractLast( request.term ) ) );
+            },
+            search: function() {
+              // custom minLength
+              var term = extractLast( this.value );
+              if ( term.length < 3 ) {
+                return false;
+                }
             },
             focus: function() {
               // prevent value inserted on focus
@@ -61,4 +49,4 @@
               return false;
             }
           });
-      } );
+      });

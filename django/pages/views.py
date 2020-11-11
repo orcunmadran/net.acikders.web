@@ -33,7 +33,7 @@ def metadata_view(request, *args, **kwargs):
         "identifier":request.POST.get('identifier'), #12
         "educationalAudience":request.POST.get('educationalAudience'), #13
         "educationalUse":request.POST.get('educationalUse'), #14
-        "interactivityType":request.POST.get('interactivityType'), #15
+        "accesibilityType":request.POST.get('accesibilityType'), #15
         "timeRequired":request.POST.get('timeRequired') #16
     }
     return render(request, 'metadata.html', formveri)

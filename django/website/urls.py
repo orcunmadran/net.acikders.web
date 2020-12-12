@@ -31,4 +31,4 @@ urlpatterns = [
 # Admin Page Setup
 admin.site.site_header = 'Açık Ders Yönetim Paneli'
 admin.site.site_title = 'Açık Ders Yönetim Paneli'
-admin.site.index_title = 'Açık Ders Yönetim Paneli'
+admin.site.index_title = 'Yönetim Paneli Uygulamaları'

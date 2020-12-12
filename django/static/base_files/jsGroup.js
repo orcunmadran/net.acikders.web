@@ -83,22 +83,23 @@ function jsGrup()
       if(euD.checked == true){
         document.getElementById("educationalUse2").value += euD.value + ", "
       }
-    }
 
-/*
-      // Checked Box - Interactivity Type
-      document.getElementById("interactivityType2").value = "";
-      var itA=document.getElementById("interactivityTypeA");
-      if(itA.checked == true){
-        document.getElementById("interactivityType2").value += itA.value + ", "
+      // Checked Box - Accesibility Feature
+      document.getElementById("accesibilityFeature2").value = "";
+      var efA=document.getElementById("accesibilityFeatureA");
+      if(efA.checked == true){
+        document.getElementById("accesibilityFeature2").value += efA.value + ", "
       }
-      var itB=document.getElementById("interactivityTypeB");
-      if(itB.checked == true){
-        document.getElementById("interactivityType2").value += itB.value + ", "
+      var efB=document.getElementById("accesibilityFeatureB");
+      if(efB.checked == true){
+        document.getElementById("accesibilityFeature2").value += efB.value + ", "
       }
-      var itC=document.getElementById("interactivityTypeC");
-      if(itC.checked == true){
-        document.getElementById("interactivityType2").value += itC.value + ", "
+      var efC=document.getElementById("accesibilityFeatureC");
+      if(efC.checked == true){
+        document.getElementById("accesibilityFeature2").value += efC.value + ", "
+      }
+      var efD=document.getElementById("accesibilityFeatureD");
+      if(efD.checked == true){
+        document.getElementById("accesibilityFeature2").value += efD.value + ", "
       }
     }
-*/

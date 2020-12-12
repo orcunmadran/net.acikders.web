@@ -10,10 +10,10 @@ def test_view(request, *args, **kwargs):
     return render(request, 'test.html')
 
 def form_view(request, *args, **kwargs):
-    return render(request, 'form.html')
+    return render(request, 'metaform.html')
 
 def sema_view(request, *args, **kwargs):
-    return render(request, 'sema.html')
+    return render(request, 'schema.html')
 
 def metadata_view(request, *args, **kwargs):
     formveri = {

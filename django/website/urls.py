@@ -21,9 +21,14 @@ from pages import views
 urlpatterns = [
     path('', views.home_view, name='home'),
     path('test/', views.test_view, name='test'),
-    path('sema/', views.sema_view, name='sema'),
-    path('form/', views.form_view, name='form'),
+    path('schema/', views.sema_view, name='schema'),
+    path('metaform/', views.form_view, name='metaform'),
     path('metadata/', views.metadata_view, name='metadata'),
     path('basic/', views.basic_view, name='basic'),
     path('admin/', admin.site.urls),
 ]
+
+# Admin Page Setup
+admin.site.site_header = 'Açık Ders Yönetim Paneli'
+admin.site.site_title = 'Açık Ders Yönetim Paneli'
+admin.site.index_title = 'Açık Ders Yönetim Paneli'

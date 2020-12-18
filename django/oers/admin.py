@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models import oersTest
 from .models import oer_data
+from .models import OerTypeValues
 
 class oersTestAdmin(admin.ModelAdmin):
     #Liste görünümünde
@@ -27,5 +28,11 @@ class oer_dataAdmin(admin.ModelAdmin):
     ]
     search_fields = ('oer_title','oer_subject','oer_description','oer_type')
 
+class OerTypeValuesAdmin(admin.ModelAdmin):
+    #Liste görünümünde
+    list_display = ('oer_type_id','oer_type_name')
+    search_fields = ('oer_type_name',)
+
 admin.site.register(oersTest, oersTestAdmin)
 admin.site.register(oer_data, oer_dataAdmin)
+admin.site.register(OerTypeValues, OerTypeValuesAdmin)

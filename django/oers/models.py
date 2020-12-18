@@ -40,4 +40,14 @@ class oer_data(models.Model):
     oer_accesibilityFeature = models.CharField(verbose_name="Erişilebilirlik Özellikleri", max_length=100, null=True, blank=True)
     oer_timeRequired = models.IntegerField(verbose_name="İhtiyaç Duyulan Süre", null=True, blank=True)
 
+class OerTypeValues(models.Model):
+    oer_type_id = models.AutoField(primary_key=True)
+    oer_type_name = models.CharField(verbose_name="Başlık",max_length=100)
 
+"""
+class OerLicenceValue(models.Model):
+    oer_licence_id = models.AutoField(primary_key=True)
+    oer_licence_name = models.CharField(verbose_name="Lisans Adı",max_length=100)
+    oer_license_deed = models.CharField(verbose_name="Lisans URL",max_length=500)
+    oer_license_html = models.CharField(verbose_name="Lisans URL",max_length=1000)
+"""

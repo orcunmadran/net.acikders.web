@@ -38,5 +38,28 @@ def metadata_view(request, *args, **kwargs):
     }
     return render(request, 'metadata.html', formveri)
 
+def database_view(request, *args, **kwargs):
+    formveri2 = {
+        "title":request.POST.get('title'), #1
+        "subject":request.POST.get('subject'), #2
+        "description":request.POST.get('description'), #3
+        "type":request.POST.get('type'), #4
+        "creator":request.POST.get('creator'), #5
+        "publisher":request.POST.get('publisher'), #6
+        "contributor":request.POST.get('contributor'), #7
+        "license":request.POST.get('license'), #8
+        "ccLicenseURL": request.POST.get('ccLicenseURL'),
+        "ccLicenseIcon": request.POST.get('ccLicenseIcon'),
+        "date":request.POST.get('date'), #9
+        "language":request.POST.get('language'), #10
+        "format":request.POST.get('format'), #11
+        "identifier":request.POST.get('identifier'), #12
+        "educationalAudience":request.POST.get('educationalAudience'), #13
+        "educationalUse":request.POST.get('educationalUse'), #14
+        "accesibilityFeature":request.POST.get('accesibilityFeature'), #15
+        "timeRequired":request.POST.get('timeRequired') #16
+    }
+    return render(request, 'database.html', formveri2)
+
 def basic_view(*args, **kwargs):
     return HttpResponse("<h1>TEST</h1><p><a href='javascript:history.back()'>Geri dön...</a></p>")

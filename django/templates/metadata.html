@@ -139,11 +139,37 @@
       </tbody>
     </table>
     </div>
-    <button class="btn btn-primary" onclick="goBack()">Veri giriş ekranına geri dön!</button>
+    <p>
+        <button class="btn btn-danger" onclick="goBack()">Veri giriş ekranına geri dön!</button>
+        {% if user.is_authenticated %}
+        <button class="btn btn-success" onclick="formSubmit()">Üst veriyi veri kaydet!</button>
+        <form action="/database/" method="post" id="formbase">
+            {% csrf_token %}
+            <input type="hidden" id="title" name="title" value="{{ title }}">
+            <input type="hidden" id="subject" name="subject" value="{{ subject }}">
+            <input type="hidden" id="description" name="description" value="{{ description }}">
+            <input type="hidden" id="type" name="type" value="{{ type }}">
+            <input type="hidden" id="creator" name="creator" value="{{ creator }}">
+            <input type="hidden" id="publisher" name="publisher" value="{{ publisher }}">
+            <input type="hidden" id="contributor" name="contributor" value="{{ contributor }}">
+            <input type="hidden" id="license" name="license" value="{{ license }}">
+            <input type="hidden" id="date" name="date" value="{{ date }}">
+            <input type="hidden" id="language" name="language" value="{{ language }}">
+            <input type="hidden" id="format" name="format" value="{{ format }}">
+            <input type="hidden" id="identifier" name="identifier" value="{{ identifier }}">
+            <input type="hidden" id="educationalAudience" name="educationalAudience" value="{{ educationalAudience }}">
+            <input type="hidden" id="educationalUse" name="educationalUse" value="{{ educationalUse }}">
+            <input type="hidden" id="accesibilityFeature" name="accesibilityFeature" value="{{ accesibilityFeature }}">
+            <input type="hidden" id="timeRequired" name="timeRequired" value="{{ timeRequired }}">
+        </form>
+        {% endif %}
+    </p>
     <script>
     function goBack() {
       window.history.back();
     }
+    function formSubmit() {
+      document.getElementById("formbase").submit();
+    }
     </script>
-    <br><br>
 {% endblock %}

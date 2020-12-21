@@ -13,7 +13,9 @@
     <p>Açık eğitim kaynağının üst verisini oluşturmak için aşağıdaki formu doldurunuz.<br>Zorunlu alanların yanında ( <strong><span class="text-danger">*</span></strong> ) işareti yer almaktadır.</p>
     <form class="needs-validation" action="/metadata/" method="post" novalidate>
       {% csrf_token %}
-      <p class="lead p-2 mb-2 bg-light text-dark">İçerik</p>
+      <!--BG: https://getbootstrap.com/docs/4.1/utilities/colors/#background-color -->
+      <!--Tx: https://getbootstrap.com/docs/4.1/utilities/colors/#color -->
+      <p class="lead p-2 mb-2 bg-secondary text-light">İçerik</p>
       <div class="form-row">
 <!-- Title (Başlık) Start -->
       <div class="form-group col-md-6">
@@ -61,7 +63,7 @@
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
-        <textarea class="form-control" id="description" name="description" rows="11" required></textarea>
+        <textarea class="form-control" id="description" name="description" rows="9" required></textarea>
         <small id="descriptionHelp" class="form-text text-muted">Kaynağın içeriği hakkında bilgi veren özet metni giriniz. <strong><span class="text-danger">*</span></strong></small>
         <div class="invalid-feedback">
           Lütfen kaynak hakkında özet bilgi giriniz!
@@ -100,7 +102,7 @@
       <input type="hidden" id="type2" name="type">
       </div>
 <!-- Type (Tip) End -->
-      <p class="lead p-2 mb-2 bg-light text-dark">Entellektüel</p>
+      <p class="lead p-2 mb-2 bg-secondary text-light">Entellektüel</p>
       <div class="form-row">
 <!-- Creator (Yaratıcı) Start -->
       <div class="form-group col-md-6">
@@ -178,7 +180,7 @@
       <input type="hidden" id="ccLicenseURL" name="ccLicenseURL">
       <input type="hidden" id="ccLicenseIcon" name="ccLicenseIcon">
 <!-- License (Lisans) End -->
-      <p class="lead p-2 mb-2 bg-light text-dark">Yapısal</p>
+      <p class="lead p-2 mb-2 bg-secondary text-light">Yapısal</p>
       <div class="form-row">
 <!-- Date (Tarih) Start -->
       <div class="form-group col-md-6">
@@ -190,7 +192,7 @@
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
-        <input type="date" class="form-control" id="date" name="date">
+        <input placeholder="YYYY-AA-GG" type="date" class="form-control" id="date" name="date">
         <small id="dateHelp" class="form-text text-muted">Biliniyorsa kaynağın yayınlandığı ya da son güncellendiği tarih.</small>
       </div>
 <!-- Date (Tarih) End -->
@@ -243,7 +245,7 @@
       </div>
 <!-- Identifier (Tanımlayıcı) End -->
       </div>
-      <p class="lead p-2 mb-2 bg-light text-dark">Eğitsel</p>
+      <p class="lead p-2 mb-2 bg-secondary text-light">Eğitsel</p>
       <div class="form-row">
 <!-- Educational Audience (Hedef Kitle) Start -->
       <div class="form-group col-md-6">

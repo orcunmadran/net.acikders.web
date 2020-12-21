@@ -19,11 +19,20 @@
           <a class="nav-link" href="https://github.com/orcunmadran/net.acikders.web" target="_blank">Proje GitHub Deposu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/admin">Yönetim Paneli</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="http://www.madran.net/iletisim_sosyal_aglar/" target="_blank">İletişim</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">|</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Kullanıcı - {{ user }}</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Giriş Yap!</a>
+        </li>
+        {% endif %}
       </ul>
       <!--
       <form class="form-inline mt-2 mt-md-0">

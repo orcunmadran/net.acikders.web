@@ -3,32 +3,32 @@ function jsGrup()
       <!-- CC Lisans URL ve İkonlar -->
       var ccLicense = document.getElementById("license").value;
       switch(ccLicense){
-          case "CC 0":
+          case "CC0 1.0":
           document.getElementById("ccLicenseURL").value = "https://creativecommons.org/publicdomain/zero/1.0/deed";
           document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc0.svg?ref=chooser-v1" />'
           break;
-          case "CC BY":
+          case "CC BY 4.0":
           document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by/4.0/";
           document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" />'
           break;
-          case "CC BY-SA":
+          case "CC BY-SA 4.0":
           document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-sa/4.0/";
           document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" />'
           break;
-          case "CC BY-NC":
+          case "CC BY-NC 4.0":
           document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-nc/4.0/";
           document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" />'
           break;
-          case "CC BY-NC-SA":
+          case "CC BY-NC-SA 4.0":
           break;
           document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
           document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" />'
           break;
-          case "CC BY-ND":
+          case "CC BY-ND 4.0":
           document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-nd/4.0/";
           document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" />'
           break;
-          case "CC BY-NC-ND":
+          case "CC BY-NC-ND 4.0":
           document.getElementById("ccLicenseURL").value = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
           document.getElementById("ccLicenseIcon").value = '<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" />'
       }
@@ -84,22 +84,22 @@ function jsGrup()
         document.getElementById("educationalUse2").value += euD.value + ", "
       }
 
-      // Checked Box - Accesibility Feature
-      document.getElementById("accesibilityFeature2").value = "";
-      var efA=document.getElementById("accesibilityFeatureA");
+      // Checked Box - Accessibility Feature
+      document.getElementById("accessibilityFeature2").value = "";
+      var efA=document.getElementById("accessibilityFeatureA");
       if(efA.checked == true){
-        document.getElementById("accesibilityFeature2").value += efA.value + ", "
+        document.getElementById("accessibilityFeature2").value += efA.value + ", "
       }
-      var efB=document.getElementById("accesibilityFeatureB");
+      var efB=document.getElementById("accessibilityFeatureB");
       if(efB.checked == true){
-        document.getElementById("accesibilityFeature2").value += efB.value + ", "
+        document.getElementById("accessibilityFeature2").value += efB.value + ", "
       }
-      var efC=document.getElementById("accesibilityFeatureC");
+      var efC=document.getElementById("accessibilityFeatureC");
       if(efC.checked == true){
-        document.getElementById("accesibilityFeature2").value += efC.value + ", "
+        document.getElementById("accessibilityFeature2").value += efC.value + ", "
       }
-      var efD=document.getElementById("accesibilityFeatureD");
+      var efD=document.getElementById("accessibilityFeatureD");
       if(efD.checked == true){
-        document.getElementById("accesibilityFeature2").value += efD.value + ", "
+        document.getElementById("accessibilityFeature2").value += efD.value + ", "
       }
     }

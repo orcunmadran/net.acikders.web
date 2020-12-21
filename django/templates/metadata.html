@@ -27,11 +27,11 @@
       </div>
     </form>
     <p>
-        <button class="btn btn-primary" onclick="copyHTML()">HTML kodunu kopyala!</button>
         <button class="btn btn-danger" onclick="goBack()">Veri giriş ekranına geri dön!</button>
+        <button class="btn btn-primary" onclick="copyHTML()">HTML kodunu kopyala!</button>
         {% if user.is_authenticated %}
         <button class="btn btn-success" onclick="formSubmit()">Üst veriyi veri kaydet!</button>
-        <form action="/database/" method="post" id="formbase">
+        <form action="/metabase/" method="post" id="formbase">
             {% csrf_token %}
             <input type="hidden" id="title" name="title" value="{{ title }}">
             <input type="hidden" id="subject" name="subject" value="{{ subject }}">
@@ -47,7 +47,7 @@
             <input type="hidden" id="identifier" name="identifier" value="{{ identifier }}">
             <input type="hidden" id="educationalAudience" name="educationalAudience" value="{{ educationalAudience }}">
             <input type="hidden" id="educationalUse" name="educationalUse" value="{{ educationalUse }}">
-            <input type="hidden" id="accesibilityFeature" name="accesibilityFeature" value="{{ accesibilityFeature }}">
+            <input type="hidden" id="accessibilityFeature" name="accessibilityFeature" value="{{ accessibilityFeature }}">
             <input type="hidden" id="timeRequired" name="timeRequired" value="{{ timeRequired }}">
         </form>
         {% endif %}
@@ -160,7 +160,7 @@
         <tr>
           <th scope="row">15</th>
           <td>Erişilebilirlik Özelliği</td>
-          <td>{{ accesibilityFeature }}</td>
+          <td>{{ accessibilityFeature }}</td>
         </tr>
         <tr>
           <th scope="row">16</th>

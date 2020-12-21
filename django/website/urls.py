@@ -20,11 +20,10 @@ from pages import views
 
 urlpatterns = [
     path('', views.home_view, name='home'),
-    path('test/', views.test_view, name='test'),
-    path('schema/', views.sema_view, name='schema'),
-    path('metaform/', views.form_view, name='metaform'),
+    path('schema/', views.schema_view, name='schema'),
+    path('metaform/', views.metaform_view, name='metaform'),
     path('metadata/', views.metadata_view, name='metadata'),
-    path('database/', views.database_view, name='database'),
+    path('metabase/', views.metabase_view, name='metabase'),
     path('basic/', views.basic_view, name='basic'),
     path('admin/', admin.site.urls),
 ]

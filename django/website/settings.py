@@ -31,8 +31,8 @@ ALLOWED_HOSTS = ['.acikders.net', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    #New App: Oers Apps
-    #'oers.apps.OersConfig',
+    #Pages Apps
+    'pages.apps.PagesConfig',
     #Django Apps
     'django.contrib.admin',
     'django.contrib.auth',

@@ -14,6 +14,11 @@ komut.execute('delete from sqlite_sequence where name="oers_oersTest";')
 veritabani.commit()
 '''
 
+'''
 #Veri tabanındaki tabloları görüntüle
 for tablolar in komut.execute('SELECT * FROM oers_oer_data'):
+        print(tablolar)
+'''
+#Veri tabanındaki tabloları görüntüle
+for tablolar in komut.execute('SELECT * FROM sqlite_master'):
         print(tablolar)

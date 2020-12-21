@@ -59,6 +59,17 @@ def database_view(request, *args, **kwargs):
         "accesibilityFeature":request.POST.get('accesibilityFeature'), #15
         "timeRequired":request.POST.get('timeRequired') #16
     }
+    '''
+    # SQLite3 kütüphanesi yükleniyor
+    import sqlite3
+    # veritabani.db adında bir SQLite3 veri tabanı dosyası oluşturuluyor.
+    veritabani = sqlite3.connect('db.sqlite3')
+    # Veri tabanı üzerinde işlemleri gerçekleştirebilmek için bir Cursor objesi oluşturuluyor.
+    komut = veritabani.cursor()
+    # Veri tabanındaki tabloları görüntüle
+    komut.execute("INSERT INTO oers_oersTest (oer_name, oer_url, oer_types) VALUES (?,?,?)", (request.POST.get('title'), request.POST.get('identifier'), request.POST.get('type')))
+    veritabani.commit()
+    '''
     return render(request, 'database.html', formveri2)
 
 def basic_view(*args, **kwargs):

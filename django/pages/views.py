@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import OerData
 import sqlite3
 import datetime
 
@@ -74,3 +75,16 @@ def metabase_view(request, *args, **kwargs):
 
 def basic_view(*args, **kwargs):
     return HttpResponse("<h1>TEST</h1><p><a href='javascript:history.back()'>Geri dön...</a></p>")
+
+def test_view(request):
+
+    #users = OerData.objects.all()
+    rows = OerData.objects.raw(
+        '''
+        SELECT * 
+        FROM pages_OerData
+        WHERE oer_title = "{keyword}" LIMIT 2
+        '''
+        .format(keyword = "Başlık"))
+
+    return render(request, 'test.html', {'rows': rows})

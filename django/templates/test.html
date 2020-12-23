@@ -2,4 +2,8 @@
 
 {% block content %}
 
+{% for row in rows %}
+    <li>{{ row.oer_title}} {{ row.oer_type }}</li>
+{% endfor %}
+
 {% endblock %}

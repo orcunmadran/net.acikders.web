@@ -26,6 +26,7 @@ urlpatterns = [
     path('metabase/', views.metabase_view, name='metabase'),
     path('basic/', views.basic_view, name='basic'),
     path('admin/', admin.site.urls),
+    path('test/', views.test_view, name='test'),
 ]
 
 # Admin Page Setup

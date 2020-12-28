@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class OerData(models.Model):
-    oer_auto_id = models.AutoField(primary_key=True)
+    oer_auto_id = models.AutoField(verbose_name="OER ID", primary_key=True)
     oer_auto_date = models.DateTimeField(verbose_name="Kayıt Tarihi ve Saati", auto_now=True)
     oer_title = models.CharField(verbose_name="Başlık", max_length=500)
     oer_subject = models.CharField(verbose_name="Konu", max_length=1000)
@@ -20,3 +20,8 @@ class OerData(models.Model):
     oer_educationalUse = models.CharField(verbose_name="Eğitsel Kullanım", max_length=500, null=True, blank=True)
     oer_accessibilityFeature = models.CharField(verbose_name="Erişilebilirlik Özellikleri", max_length=100, null=True, blank=True)
     oer_timeRequired = models.IntegerField(verbose_name="İhtiyaç Duyulan Süre", null=True, blank=True)
+
+class TypeData(models.Model):
+    type_auto_id = models.AutoField(verbose_name="OER ID", primary_key=True)
+    type_auto_date = models.DateTimeField(verbose_name="Kayıt Tarihi ve Saati", auto_now=True)
+    type_name = models.CharField(verbose_name="Ad", max_length=50)

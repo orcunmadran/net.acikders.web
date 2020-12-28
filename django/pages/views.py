@@ -83,8 +83,8 @@ def test_view(request):
         '''
         SELECT * 
         FROM pages_OerData
-        WHERE oer_title = "{keyword}" LIMIT 2
+        WHERE oer_title LIKE '%{keyword}%' LIMIT 2
         '''
-        .format(keyword = "Başlık"))
+        .format(keyword = "Cad"))
 
     return render(request, 'test.html', {'rows': rows})

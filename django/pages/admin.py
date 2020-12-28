@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import OerData
+from .models import TypeData
 
 class OerDataAdmin(admin.ModelAdmin):
     #Liste görünümünde
@@ -16,4 +17,9 @@ class OerDataAdmin(admin.ModelAdmin):
     ]
     search_fields = ('oer_title','oer_subject','oer_description','oer_type')
 
+class TypeDataAdmin(admin.ModelAdmin):
+    #Liste görünümünde
+    list_display = ('type_auto_id','type_auto_date','type_name')
+
 admin.site.register(OerData, OerDataAdmin)
+admin.site.register(TypeData, TypeDataAdmin)

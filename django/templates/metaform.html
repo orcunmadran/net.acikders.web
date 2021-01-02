@@ -20,9 +20,10 @@
 <!-- Title (Başlık) Start -->
       <div class="form-group col-md-6">
         <label for="title">Başlık:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Başlık"
-           data-content="Kaynağa verilen isim.">
+        <!-- Bootstrap Popover https://getbootstrap.com/docs/4.1/components/popovers/ -->
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Başlık (Title)"
+           data-content="<strong>Açıklama:</strong> Kaynağa verilen isim.<br><strong>Ör:</strong> Programlama Dilleri ve Algoritmalar.<br><strong><span class='text-danger'>*</span></strong> Bu alan zorunludur!">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
@@ -37,9 +38,9 @@
 <!-- Subject (Konu) Start -->
       <div class="form-group col-md-6">
         <label for="subject">Konu (Anahtar Kelime / Kelimeler):</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Konu"
-           data-content="Kaynağın konusu tanımlayan anahtar kelimeler.">
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Konu (Subject)"
+           data-content="<strong>Açıklama:</strong> Kaynağı tanımlayan anahtar kelime ya da kelimeler.<br><strong>Ör:</strong> Programlama, Programlama Dilleri, Algoritma, Python.<br><strong><span class='text-danger'>*</span></strong> Bu alan zorunludur!">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
@@ -55,10 +56,10 @@
       <div class="form-row">
 <!-- Description (Tanım) Start -->
       <div class="form-group col-md-6">
-        <label for="description">Kaynağı Kısaca Tanımlayınız / Özet Bilgi Veriniz:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Özet"
-           data-content="Detaylı bilgi gelecek...">
+        <label for="description">Tanım (Özet):</label>
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Tanım (Description)"
+           data-content="<strong>Açıklama:</strong> Kaynağın içeriği hakkında bilgi veren özet metin.<br><strong>Ör:</strong> Ders izlencelerinde yer alan dersin katalog tanımı.<br><strong><span class='text-danger'>*</span></strong> Bu alan zorunludur!">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
@@ -72,10 +73,23 @@
 <!-- Description (Tanım) End -->
 <!-- Type (Tip) Start -->
       <div class="form-group col-md-6">
-        <label for="type">Kaynak tipini seçiniz:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Kaynak Tipi"
-           data-content="Detaylı bilgi gelecek...">
+        <label for="type">Kaynak Tipi (Birden çok seçebilirsiniz):</label>
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Tip (Type)"
+           data-content="Kaynağın tipini belirlerken aşağıdaki tanımlamalardan faydalanabilirsiniz:
+                <br> - <strong>Etkileşimli Kaynak: </strong>Kullanıcının anlayarak, kullanarak ve deneyimleyerek etkileşimde bulunduğu kaynak (çoklu-ortam öğrenme nesneleri, simülasyon, sanal gerçeklik uygulamaları).
+                <br> - <strong>Etkinlik:</strong> Keşfetme amaçlı etkinlikler (sergi ve müze ziyaretleri, webinar, konferans, çalıştay).
+                <br> - <strong>Fiziksel Nesne:</strong> Cansız, üç boyutlu bir nesne veya madde.
+                <br> - <strong>Görsel:</strong> Metin dışındaki görsel gösterimler (fisikzel nesnelerin fotoğrafları, resimler, müzik notaları).
+                <br> - <strong>Hareketli Görsel:</strong> Art arda gösterildiğinde bir hareket izlenimi veren bir dizi görsel sunum (animasyonlar, filmler, videolar).
+                <br> - <strong>Hareketsiz Görsel:</strong> Durağan görsel gösterim (grafik tasarımlar, çizimler, planlar, haritalar).
+                <br> - <strong>Koleksiyon:</strong> Bir araya getirilen (gruplanan) kaynaklar.
+                <br> - <strong>Metin:</strong> Öncelik olarak okuma amacıyla oluşturulan kaynak (kitaplar, makaleler, gazeteler, dergiler).
+                <br> - <strong>Servis:</strong> Bir veya daha fazla işlev sağlayan bir sistem.
+                <br> - <strong>Ses:</strong> Öncelik olarak duyma amacıyla oluşturulan kaynak (müzik, ortam sesileri, kaydedilmiş konuşmalar).
+                <br> - <strong>Veri seti:</strong> Tanımlanmış bir yapıda kodlanmış veriler (veri tanbanları, listeler, tablolar).
+                <br> - <strong>Yazılım:</strong> Kaynak kod veya derlenmiş bir bilgisayar programı.
+                <br><strong><span class='text-danger'>*</span></strong> Bu alan zorunludur!">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
@@ -94,7 +108,7 @@
             <option>Veri seti</option>
             <option>Yazılım</option>
           </select>
-        <small id="typeHelp" class="form-text text-muted">CTRL kullanarak birden çok seçim yapabilirsiniz. <strong><span class="text-danger">*</span></strong></small>
+        <small id="typeHelp" class="form-text text-muted">CTRL kullanarak çoklu seçim yapabilirsiniz. <strong><span class="text-danger">*</span></strong></small>
         <div class="invalid-feedback">
           Lütfen en az bir kaynak tipi seçiniz!
         </div>
@@ -106,16 +120,16 @@
       <div class="form-row">
 <!-- Creator (Yaratıcı) Start -->
       <div class="form-group col-md-6">
-        <label for="creator">Yaratıcı(lar) (Yazar):</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Yaratıcı"
-           data-content="Detaylı bilgi gelecek...">
+        <label for="creator">Yaratıcı(lar):</label>
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Yaratıcı (Creator)"
+           data-content="<strong>Açıklama:</strong> Kaynağın içeriğinden 1. derecede sorumlu kişi ya da kuruluş.<br><strong>Ör: </strong>Orçun Madran, Umut Al, Hacettepe Üniversitesi.<br><strong><span class='text-danger'>*</span></strong> Bu alan zorunludur!">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
         <input type="text" class="form-control" id="creator" name="creator" required>
-        <small id="creatorHelp" class="form-text text-muted">Kaynağın oluşturulmasından 1. derecede sorumlu olan kişi ya da kuruluş bilgisi giriniz. <strong><span class="text-danger">*</span></strong> <br> - Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
+        <small id="creatorHelp" class="form-text text-muted">Virgül kullanarak birden çok giriş yapabilirsiniz.<strong><span class="text-danger">*</span></strong> <br></small>
         <div class="invalid-feedback">
           Lütfen kişi ya da kuruluş bilgisi giriniz!
         </div>
@@ -124,15 +138,15 @@
 <!-- Publisher (Yayıncı) Start -->
       <div class="form-group col-md-6">
         <label for="publisher">Yayıncı(lar):</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Yayıncı"
-           data-content="Detaylı bilgi gelecek...">
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Yayıncı (Publisher)"
+           data-content="<strong>Açıklama:</strong> Kaynağı kullanıma sunmaktan sorumlu kişi ya da kuruluş.<br><strong>Ör: </strong>Orçun Madran, Umut Al, Hacettepe Üniversitesi<br><strong><span class='text-primary'>*</span></strong> Bu alan zorunlu değildir.">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
         <input type="text" class="form-control" id="publisher" name="publisher">
-        <small id="publisherHelp" class="form-text text-muted">Varsa kaynağın yayınlanmasından 1. derecede sorumlu olan kişi ya da kuruluş bilgisi giriniz. <br> - Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
+        <small id="publisherHelp" class="form-text text-muted">Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
       </div>
 <!-- Publisher (Yayıncı) End -->
       </div>
@@ -140,23 +154,31 @@
 <!-- Contributor (Katkı Sağlayan) Start -->
       <div class="form-group col-md-6">
         <label for="contributor">Katkı Sağlayan(lar):</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
            title="Katkı Sağlayan"
-           data-content="Detaylı bilgi gelecek...">
+           data-content="<strong>Açıklama:</strong> Kaynağın içeriğine katkı sağlayan kişi ya da kuruluş.<br><strong>Ör: </strong>Orçun Madran, Umut Al, Hacettepe Üniversitesi.<br><strong><span class='text-primary'>*</span></strong> Bu alan zorunlu değildir.">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
         <input type="text" class="form-control" id="contributor" name="contributor">
-        <small id="contributorHelp" class="form-text text-muted">Varsa kaynağın oluşturulmasından 2. derecede sorumlu olan kişi ya da kuruluş bilgisi giriniz. <br> - Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
+        <small id="contributorHelp" class="form-text text-muted">Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
       </div>
 <!-- Contributor (Katkı Sağlayan) End -->
 <!-- License (Lisans) Start -->
         <div class="form-group col-md-6">
         <label for="license">Kaynağın Açık Lisansı:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
            title="Açık Lisans"
-           data-content="Detaylı bilgi gelecek...">
+           data-content=" Kaynağın lisansını belirlerken aşağıdaki tanımlamalardan faydalanabilir, lisansın üzerine tıklayarak detaylı bilgi alabilirsiniz:
+            <br>- <strong><a href='https://creativecommons.org/publicdomain/zero/1.0/deed.tr' target='_blank'>CCO 1.0:</a></strong> Telif hakkı sınırlaması yoktur, kaynak atıf vermeden kullanılabilir.
+            <br>- <strong><a href='https://creativecommons.org/licenses/by/4.0/deed.tr' target='_blank'>CC BY 4.0:</a></strong> Atıf vermek kaydıyla ticari amaç da dahil olmak üzere kopyalanabilir, düzenlenebilir, dağıtılabilir.
+            <br>- <strong><a href='https://creativecommons.org/licenses/by-sa/4.0/deed.tr' target='_blank'>CC BY-SA 4.0:</a></strong> Atıf vermek ve aynı lisansı devam ettirmek kaydıyla ticari amaç da dahil olmak üzere kopyalanabilir, düzenlenebilir, dağıtılabilir.
+            <br>- <strong><a href='https://creativecommons.org/licenses/by-nc/4.0/deed.tr' target='_blank'>CC BY-NC 4.0:</a></strong> Atıf vermek kaydıyla ticari amaç haricinde kopyalanabilir, düzenlenebilir, dağıtılabilir.
+            <br>- <strong><a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.tr' target='_blank'>CC BY-NC-SA 4.0:</a></strong> Atıf vermek ve aynı lisansı devam ettirmek kaydıyla ticari amaç haricinde kopyalanabilir, düzenlenebilir, dağıtılabilir.
+            <br>- <strong><a href='https://creativecommons.org/licenses/by-nd/4.0/deed.tr' target='_blank'>CC BY-ND 4.0:</a></strong> Atıf vermek kaydıyla ticari amaç da dahil olmak üzere kopyalanabilir ve dağıtılabilir ancak üzerinde hiçbir değişiklik yapılamaz.
+            <br>- <strong><a href='https://creativecommons.org/licenses/by-nc-nd/4.0/deed.tr' target='_blank'>CC BY-NC-ND 4.0:</a></strong> Atıf vermek kaydıyla ticari amaç haricinde kopyalanabilir ve dağıtılabilir ancak üzerinde hiçbir değişiklik yapılamaz.
+            <br><strong><span class='text-danger'>*</span></strong> Bu alan zorunludur!">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
@@ -171,7 +193,7 @@
           <option value="CC BY-ND 4.0">CC BY-ND 4.0 (Atıf, Türetilemez)</option>
           <option value="CC BY-NC-ND 4.0">CC BY-NC-ND 4.0 (Atıf, Gayri Ticari, Türetilemez)</option>
         </select>
-        <small id="licenseHelp" class="form-text text-muted">Kaynağın lisanslandığı Creative Commons (CC) lisansını seçiniz. <strong><span class="text-danger">*</span></strong> <br> - Lisanslarla ilgili bilgi için <a tabindex="-1" href="https://creativecommons.org/about/cclicenses/" target="_blank">tıklayınız</a>.</small>
+        <small id="licenseHelp" class="form-text text-muted">Kaynağın lisanslandığı Creative Commons (CC) lisansını seçiniz. <strong><span class="text-danger">*</span></strong></small>
         <div class="invalid-feedback">
           Lütfen lisans seçiniz!
         </div>
@@ -184,24 +206,24 @@
       <div class="form-row">
 <!-- Date (Tarih) Start -->
       <div class="form-group col-md-6">
-        <label for="date">Kaynağın Yayınlandığı (ya da Güncellendiği) Tarih:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Tarih"
-           data-content="Detaylı bilgi gelecek...">
+        <label for="date">Tarih:</label>
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Tarih (Date)"
+           data-content="<strong>Açıklama:</strong> Eğer biliniyorsa kaynağın yayınlandığı tarihi giriniz. Kaynağın yayın tarihinden sonra bir güncelleme gerçekleştirildiyse, güncelleme tarihini giriniz.<br><strong><span class='text-primary'>*</span></strong> Bu alan zorunlu değildir.">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
         <input placeholder="YYYY-AA-GG" type="date" class="form-control" id="date" name="date">
-        <small id="dateHelp" class="form-text text-muted">Biliniyorsa kaynağın yayınlandığı ya da son güncellendiği tarih.</small>
+        <small id="dateHelp" class="form-text text-muted">Tarih bilgisini 'tarih seçici' yardımıyla ya da gg.aa.yyyy biçiminde elle giriniz.</small>
       </div>
 <!-- Date (Tarih) End -->
 <!-- Language (Dil) Start -->
       <div class="form-group col-md-6">
-        <label for="date">Kaynağın Dili:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Dil"
-           data-content="Detaylı bilgi gelecek...">
+        <label for="language">Dil:</label>
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Dil (Language)"
+           data-content="<strong>Açıklama:</strong> Kaynakta yer alan hakim dili giriniz.<br><strong><span class='text-primary'>*</span></strong> Bu alan zorunlu değildir.">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
@@ -210,35 +232,36 @@
             <option selected value="Dil tanımlanmadı!">Seçiniz...</option>
             {% include 'lang.html' %}
         </select>
+        <small id="languageHelp" class="form-text text-muted">Dil seçiniz.</small>
       </div>
       </div>
 <!-- Language (Dil) End -->
       <div class="form-row">
 <!-- Format (Biçim) Start -->
       <div class="form-group col-md-6">
-        <label for="format">Kaynağı oluşturan materyallerin dosya biçimleri:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Dosya Biçimi"
-           data-content="Detaylı bilgi gelecek...">
+        <label for="format">Dosya Biçimleri:</label>
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Dosya Biçimi (Format)"
+           data-content="<strong>Açıklama:</strong> Kaynak içinde yer alan materyallerin dosya biçimlerini giriniz.<br><strong>Ör</strong>: ODF, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, MP4, MP3, MOV, JPG. <br><strong><span class='text-primary'>*</span></strong> Bu alan zorunlu değildir.">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
         <input type="text" class="form-control" id="format" name="format">
-        <small id="formatHelp" class="form-text text-muted">Örneğin: ODF, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, MP4, MP3, MOV, JPG vb.</small>
+        <small id="formatHelp" class="form-text text-muted">Virgül kullanarak birden çok giriş yapabilirsiniz.</small>
       </div>
 <!-- Identifier (Tanımlayıcı) Start -->
       <div class="form-group col-md-6">
-        <label for="identifier">Kaynağı Tanımlayıcı Adres (URL):</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Tanımlayıcı Adres"
-           data-content="Detaylı bilgi gelecek...">
+        <label for="identifier">Tanımlayıcı Adres (URL):</label>
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Tanımlayıcı Adres (Identifier)"
+           data-content="<strong>Açıklama:</strong> Kaynağın erişilebileceği internet adresini giriniz.<br><strong>Ör:</strong> https://www.madran.net/<br><strong><span class='text-danger'>*</span></strong> Bu alan zorunludur!">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
         <input type="url" class="form-control" id="identifier" name="identifier" value="http://" required>
-        <small id="identifierHelp" class="form-text text-muted">Kaynağın erişilebileceği internet adresini ("http://" ya da "https://" ön eki ile birlikte) giriniz. <strong><span class="text-danger">*</span></strong></small>
+        <small id="identifierHelp" class="form-text text-muted">Adresi <i>http://</i> ya da <i>https://</i> ön eki ile birlikte giriniz. <strong><span class="text-danger">*</span></strong></small>
         <div class="invalid-feedback">
           Lütfen geçerli bir internet adresi giriniz!
         </div>
@@ -250,9 +273,9 @@
 <!-- Educational Audience (Hedef Kitle) Start -->
       <div class="form-group col-md-6">
       <label for="educationalAudience2">Hedef Kitle:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Hedef Kitle"
-           data-content="Detaylı bilgi gelecek...">
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Hedef Kitle (Educational Audience)"
+           data-content="<strong>Açıklama:</strong> Öğrenim kaynağının faydalı olacağı eğitim düzeyi.<br><strong><span class='text-primary'>*</span></strong> Bu alan zorunlu değildir.">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
@@ -278,7 +301,7 @@
           <input class="form-check-input" type="checkbox" id="educationalAudienceE" value="Yaşam Boyu Öğrenme">
           <label class="form-check-label" for="educationalAudienceE">Yaşam Boyu Öğrenme</label>
         </div>
-      <small id="educationalAudienceHelp" class="form-text text-muted">Tanımlanmış hedef kitle varsa seçiniz. Birden çok seçim yapabilirsiniz.</small>
+      <small id="educationalAudienceHelp" class="form-text text-muted">Birden çok seçim yapabilirsiniz.</small>
       </div>
       </div>
       <input type="hidden" id="educationalAudience2" name="educationalAudience">
@@ -286,9 +309,14 @@
 <!-- Educational Use (Eğitsel Kullanım) Start -->
       <div class="form-group col-md-6">
       <label for="educationalUse2">Eğitsel Kullanım:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Eğitsel Kullanım"
-           data-content="Detaylı bilgi gelecek...">
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Eğitsel Kullanım (Educational Use)"
+           data-content="<strong>Açıklama:</strong> Eğitsel kullanımı belirlerken aşağıdaki tanımlamalardan faydalanabilirsiniz:
+                <br> - <strong>Bireysel öğrenme:</strong> Kaynak içinde bireysel kullanım için öğeler yer almaktadır.
+                <br> - <strong>İşbirliğine dayalı öğrenme:</strong> Kaynak içinde grup çalışması için öğeler yer almaktadır.
+                <br> - <strong>Biçimlendirici değerlendirme:</strong> Kaynak içinde öğrenim sırasında yaşanan güçlükleri tespit eden ve gerekli yönlendirmeyi yapan öğeler yer almaktadır.
+                <br> - <strong>Düzey belirleyici değerlendirme:</strong> Kaynak içinde öğrenim sonunda kazanılmış davranış ve becerileri ölçen öğeler yer almaktadır.
+                <br><strong><span class='text-primary'>*</span></strong> Bu alan zorunlu değildir.">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
@@ -310,7 +338,7 @@
           <input class="form-check-input" type="checkbox" id="educationalUseD" value="Düzey belirleyici öğrenme">
           <label class="form-check-label" for="educationalUseD">Düzey belirleyici değerlendirme</label>
         </div>
-      <small id="educationalUseHelp" class="form-text text-muted">Tanımlanmış eğitim amaçlı kullanım şekli varsa seçiniz. Birden çok seçim yapabilirsiniz.</small>
+      <small id="educationalUseHelp" class="form-text text-muted">Birden çok seçim yapabilirsiniz.</small>
       </div>
       </div>
       <input type="hidden" id="educationalUse2" name="educationalUse">
@@ -320,31 +348,57 @@
 <!-- Accessibility Feature (Erişebilirlik Özelliği) Start -->
       <div class="form-group col-md-6">
         <label for="accessibilityFeature2">Erişebilirlik Özelliği:</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
-           title="Erişilebilirlik Özelliği"
-           data-content="Detaylı bilgi gelecek...">
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
+           title="Erişilebilirlik Özelliği (Accessibility Feature)"
+           data-content="Erişebilirlik özelliklerini belirlerken aşağıdaki tanımlamalardan faydalanabilirsiniz:
+                <br> - <strong>Görsel:</strong> İçerikte video, grafik, fotoğraf vb. görsel öğeler var.
+                <br> - <strong>İşitsel:</strong> İçerikte ses dosyaları, podcast vb. işitsel öğeler var.
+                <br> - <strong>Metinsel:</strong> İçerikte düz metin öğeleri var.
+                <br> - <strong>Sesli Açıklama:</strong> Tüm görsel içerik (resim, video, grafik) bir ekran okuyucu tarafından okunabilen bir metne sahip.
+                <br> - <strong>Altyazı:</strong> Tüm ses ve video dosyalarında altyazı var.
+                <br> - <strong>Ayrıntılı Altyazı:</strong> İşitme engelliler için altyazı var.
+                <br> - <strong>Uzun Açıklama:</strong> Tüm görseller için alternatif metne ek olarak uzun açıklamalar var.
+                <br> - <strong>Transkripsiyon:</strong> Tüm video ve ses dosyalarının metin sürümleri var.
+                <br><strong><span class='text-primary'>*</span></strong> Bu alan zorunlu değildir.">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
         <div class="form-group">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="accessibilityFeatureA" value="Altyazı">
-          <label class="form-check-label" for="accessibilityFeatureA">Altyazı</label>
+          <input class="form-check-input" type="checkbox" id="accessibilityFeatureA" value="Görsel">
+          <label class="form-check-label" for="accessibilityFeatureA">Görsel</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="accessibilityFeatureB" value="Ayrıntılı Altyazı">
-          <label class="form-check-label" for="accessibilityFeatureB">Ayrıntılı Altyazı</label>
+          <input class="form-check-input" type="checkbox" id="accessibilityFeatureB" value="İşitsel">
+          <label class="form-check-label" for="accessibilityFeatureB">İşitsel</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="accessibilityFeatureC" value="Uzun Açıklama">
-          <label class="form-check-label" for="accessibilityFeatureC">Uzun Açıklama</label>
+          <input class="form-check-input" type="checkbox" id="accessibilityFeatureC" value="Metinsel">
+          <label class="form-check-label" for="accessibilityFeatureC">Metinsel</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="accessibilityFeatureD" value="Transkripsiyon">
-          <label class="form-check-label" for="accessibilityFeatureD">Transkripsiyon</label>
+          <input class="form-check-input" type="checkbox" id="accessibilityFeatureD" value="Sesli Açıklama">
+          <label class="form-check-label" for="accessibilityFeatureD">Sesli Açıklama</label>
         </div>
-        <small id="accessibilityFeatureHelp" class="form-text text-muted">Kaynağın erişebilirlik özellikleri varsa seçiniz. Birden çok seçim yapabilirsiniz.</small>
+            <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="accessibilityFeatureE" value="Altyazı">
+          <label class="form-check-label" for="accessibilityFeatureE">Altyazı</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="accessibilityFeatureF" value="Ayrıntılı Altyazı">
+          <label class="form-check-label" for="accessibilityFeatureF">Ayrıntılı Altyazı</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="accessibilityFeatureG" value="Uzun Açıklama">
+          <label class="form-check-label" for="accessibilityFeatureG">Uzun Açıklama</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="accessibilityFeatureH" value="Transkripsiyon">
+          <label class="form-check-label" for="accessibilityFeatureH">Transkripsiyon</label>
+        </div>
+        <small id="accessibilityFeatureHelp" class="form-text text-muted">Birden çok seçim yapabilirsiniz.</small>
       </div>
       </div>
       <input type="hidden" id="accessibilityFeature2" name="accessibilityFeature">
@@ -352,15 +406,15 @@
 <!-- Time Required (İhtiyaç Duyulan Süre) Start -->
       <div class="form-group col-md-6">
        <label for="timeRequired">İhtiyaç Duyulan Süre (Saat):</label>
-        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus"
+        <a tabindex="-1" class="text-decoration-none" data-toggle="popover" data-trigger="focus" data-html="true"
            title="Süre"
-           data-content="Detaylı bilgi gelecek...">
+           data-content="<strong>Açıklama:</strong> Kaynağı oluşturan eğitsel içeriğin tamamlanabilmesi için ihtiyaç duyulan tahmini süre. Bu süre saat olarak belirlenmelidir.<br><strong><span class='text-primary'>*</span></strong> Bu alan zorunlu değildir.">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
         </a>
         <input type="number" value="0"  step="1" class="form-control" id="timeRequired" name="timeRequired">
-        <small id="timeRequiredHelp" class="form-text text-muted">Kaynakta yer alan eğitimi / içeriği tamamlamak için ihtiyaç duyulan süre belirlenmiş ise saat olarak giriniz.</small>
+        <small id="timeRequiredHelp" class="form-text text-muted">İhtiyaç duyulan süreyi rakam kullanarak giriniz.</small>
       </div>
       </div>
 <!-- Time Required (İhtiyaç Duyulan Süre) End -->

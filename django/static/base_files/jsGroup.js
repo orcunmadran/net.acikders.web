@@ -102,4 +102,20 @@ function jsGrup()
       if(efD.checked == true){
         document.getElementById("accessibilityFeature2").value += efD.value + ", "
       }
+      var efE=document.getElementById("accessibilityFeatureE");
+      if(efE.checked == true){
+        document.getElementById("accessibilityFeature2").value += efE.value + ", "
+      }
+      var efF=document.getElementById("accessibilityFeatureF");
+      if(efF.checked == true){
+        document.getElementById("accessibilityFeature2").value += efF.value + ", "
+      }
+      var efG=document.getElementById("accessibilityFeatureG");
+      if(efG.checked == true){
+        document.getElementById("accessibilityFeature2").value += efG.value + ", "
+      }
+      var efH=document.getElementById("accessibilityFeatureH");
+      if(efH.checked == true){
+        document.getElementById("accessibilityFeature2").value += efH   .value + ", "
+      }
     }

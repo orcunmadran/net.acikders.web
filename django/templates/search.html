@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1 class="mt-5"></h1>
+
+ <!-- Search -->
+        <form class="form-inline" action="/search" method="get">
+          <input class="form-control mr-sm-2" type="text" aria-label="Search" name="q" value="{% for keyword in keywords %} {{ keyword }} {% endfor %}">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Yeniden Ara</button>
+        </form>
+   <!-- Search -->
+  <p>acikders.net içinde <i>{% for keyword in keywords %} {{ keyword }} {% endfor %}</i> ile ilgili {{ rowstotal }} AEK var.</p>
+  {% for row in rows %}
+  <p class="lead">
+    <a href="{{ row.oer_identifier }}" target="_blank">{{ row.oer_title }}</a>, {{ row.oer_creator }}
+    <a data-toggle="collapse" href="#queryResults{{ row.oer_auto_id }}" aria-expanded="false" aria-controls="queryResults{{ row.oer_auto_id }}"> + </a>
+  </p>
+  <div class="collapse" id="queryResults{{ row.oer_auto_id }}">
+    <div class="card card-body">
+        Özet: {{ row.oer_description }}
+    </div>
+      <br>
+  </div>
+  {% endfor %}
+
+{% endblock %}

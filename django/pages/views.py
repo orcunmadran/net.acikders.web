@@ -76,19 +76,21 @@ def metabase_view(request, *args, **kwargs):
 def basic_view(*args, **kwargs):
     return HttpResponse("<h1>TEST</h1><p><a href='javascript:history.back()'>Geri dön...</a></p>")
 
-def test_view(request):
+def search_view(request):
 
     q = request.GET.get('q')
     keywords = q.split()
 
     queryString = ""
-
     for keydata in keywords:
         queryString += "(oer_title LIKE '%{keyword}%' OR oer_subject LIKE '%{keyword}%' OR oer_description LIKE '%{keyword}%' OR oer_creator LIKE '%{keyword}%') AND ".format(keyword = keydata)
-
     queryString += "oer_auto_id IS NOT NULL"
 
-    #users = OerData.objects.all()
     rows = OerData.objects.raw("SELECT * FROM pages_OerData WHERE {query}".format(query = queryString))
+    rowstotal = (len(rows))
 
-    return render(request, 'test.html', {'rows': rows})
+    return render(request, 'search.html', {'rows': rows, 'keywords': keywords, 'rowstotal': rowstotal})
+
+def test_view(request):
+
+    return render(request, 'test.html')

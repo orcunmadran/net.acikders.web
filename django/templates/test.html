@@ -1,21 +1,5 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1 class="mt-5">TEST</h1>
-
-{% for row in rows %}
-<p>
-  <a href="{{ row.oer_identifier }}" target="_blank">{{ row.oer_title }}</a>, {{ row.oer_creator }}
-  <a data-toggle="collapse" href="#queryResults{{ row.oer_auto_id }}" aria-expanded="false" aria-controls="queryResults{{ row.oer_auto_id }}"> + </a>
-  <br>{{ row.oer_subject }}
-</p>
-<div class="collapse" id="queryResults{{ row.oer_auto_id }}">
-  <div class="card card-body">
-      <strong>Özet:</strong> {{ row.oer_description }}
-  </div>
-    <br>
-</div>
-{% endfor %}
-
+<h1 class="mt-5">::: Açık Ders NET :::</h1>
 {% endblock %}

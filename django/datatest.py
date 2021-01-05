@@ -7,12 +7,12 @@ veritabani = sqlite3.connect('db.sqlite3')
 #Veri tabanı üzerinde işlemleri gerçekleştirebilmek için bir Cursor objesi oluşturuluyor.
 komut = veritabani.cursor()
 
-"""
+
 #Tablo Sıfırlama
-komut.execute('DELETE FROM pages_OerData;')
-komut.execute('DELETE FROM sqlite_sequence WHERE name="pages_OerData";')
+komut.execute('DELETE FROM pages_oerdata;')
+komut.execute('DELETE FROM sqlite_sequence WHERE name="pages_oerdata";')
 veritabani.commit()
-"""
+
 
 '''
 #Veri tabanındaki tabloları görüntüle

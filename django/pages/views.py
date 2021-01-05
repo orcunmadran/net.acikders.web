@@ -78,13 +78,15 @@ def basic_view(*args, **kwargs):
 
 def test_view(request):
 
+    q = request.GET.get('q')
+
     #users = OerData.objects.all()
     rows = OerData.objects.raw(
         '''
         SELECT * 
         FROM pages_OerData
-        WHERE oer_title LIKE '%{keyword}%' LIMIT 2
+        WHERE oer_title LIKE '%{keyword}%'
         '''
-        .format(keyword = "Cad"))
+        .format(keyword = q))
 
     return render(request, 'test.html', {'rows': rows})

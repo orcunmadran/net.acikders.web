@@ -79,14 +79,16 @@ def basic_view(*args, **kwargs):
 def test_view(request):
 
     q = request.GET.get('q')
+    keywords = q.split()
+
+    queryString = ""
+
+    for keydata in keywords:
+        queryString += "(oer_title LIKE '%{keyword}%' OR oer_subject LIKE '%{keyword}%' OR oer_description LIKE '%{keyword}%' OR oer_creator LIKE '%{keyword}%') AND ".format(keyword = keydata)
+
+    queryString += "oer_auto_id IS NOT NULL"
 
     #users = OerData.objects.all()
-    rows = OerData.objects.raw(
-        '''
-        SELECT * 
-        FROM pages_OerData
-        WHERE oer_title LIKE '%{keyword}%' OR oer_subject LIKE '%{keyword}%' OR oer_description LIKE '%{keyword}%' OR oer_creator LIKE '%{keyword}%'
-        '''
-        .format(keyword = q))
+    rows = OerData.objects.raw("SELECT * FROM pages_OerData WHERE {query}".format(query = queryString))
 
     return render(request, 'test.html', {'rows': rows})

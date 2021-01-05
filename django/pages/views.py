@@ -85,7 +85,7 @@ def test_view(request):
         '''
         SELECT * 
         FROM pages_OerData
-        WHERE oer_title LIKE '%{keyword}%'
+        WHERE oer_title LIKE '%{keyword}%' OR oer_subject LIKE '%{keyword}%' OR oer_description LIKE '%{keyword}%' OR oer_creator LIKE '%{keyword}%'
         '''
         .format(keyword = q))
 

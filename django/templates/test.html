@@ -2,26 +2,20 @@
 
 {% block content %}
 
-<script>
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-
 <h1 class="mt-5">TEST</h1>
 
 {% for row in rows %}
-    <li>
-        <a href="{{ row.oer_identifier}}" target="_blank">{{ row.oer_title}}</a>, {{ row.oer_creator}} <a href="#" onclick="myFunction()">Detay</a><br>
-        <div id="myDIV" style="display:none">
-            {{ row.oer_description}}
-        </div>
-    </li>
+<p>
+  <a href="{{ row.oer_identifier }}" target="_blank">{{ row.oer_title }}</a>, {{ row.oer_creator }}
+  <a data-toggle="collapse" href="#queryResults{{ row.oer_auto_id }}" aria-expanded="false" aria-controls="queryResults{{ row.oer_auto_id }}"> + </a>
+  <br>{{ row.oer_subject }}
+</p>
+<div class="collapse" id="queryResults{{ row.oer_auto_id }}">
+  <div class="card card-body">
+      <strong>Özet:</strong> {{ row.oer_description }}
+  </div>
+    <br>
+</div>
 {% endfor %}
 
 {% endblock %}

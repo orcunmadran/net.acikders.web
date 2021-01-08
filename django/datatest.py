@@ -13,7 +13,7 @@ komut.execute('DELETE FROM pages_oerdata;')
 komut.execute('DELETE FROM sqlite_sequence WHERE name="pages_oerdata";')
 veritabani.commit()
 '''
-
+'''222'''
 '''
 #Veri tabanındaki tabloları görüntüle
 for tablolar in komut.execute('SELECT * FROM oers_oer_data'):

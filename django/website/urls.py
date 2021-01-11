@@ -28,7 +28,6 @@ urlpatterns = [
     path('basic/', views.basic_view, name='basic'),
     path('admin/', admin.site.urls),
     path('test/', views.test_view, name='test'),
-    path('test2/', views.test2_view, name='test2'),
 ]
 
 # Admin Page Setup

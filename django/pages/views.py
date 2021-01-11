@@ -83,10 +83,13 @@ def search_view(request):
 
     queryString = ""
     for keydata in keywords:
-        queryString += "(oer_title LIKE '%{keyword}%' OR oer_subject LIKE '%{keyword}%' OR oer_description LIKE '%{keyword}%' OR oer_creator LIKE '%{keyword}%') AND ".format(keyword = keydata)
-    queryString += "oer_auto_id IS NOT NULL"
+        queryString += "(OE.oer_title LIKE '%{keyword}%' OR OE.oer_subject LIKE '%{keyword}%' OR OE.oer_description LIKE '%{keyword}%' OR OE.oer_creator LIKE '%{keyword}%') AND ".format(keyword = keydata)
+    queryString += "OE.oer_license = LI.license_code"
 
-    rows = OerData.objects.raw("SELECT *, SUBSTR(oer_description,0,75) AS summary FROM pages_OerData WHERE {query}".format(query = queryString))
+    rows = OerData.objects.raw('''
+        SELECT OE.*, LI.*, SUBSTR(OE.oer_description,0,75) AS summary
+        FROM pages_OerData OE, pages_LicenseData LI
+        WHERE {query}'''.format(query = queryString))
     rowstotal = (len(rows))
 
     return render(request, 'search.html', {'rows': rows, 'keywords': keywords, 'rowstotal': rowstotal})

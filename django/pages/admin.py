@@ -3,6 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from .models import OerData
 from .models import TypeData
+from .models import LicenseData
 
 class OerDataAdmin(admin.ModelAdmin):
     #Liste görünümünde
@@ -21,5 +22,10 @@ class TypeDataAdmin(admin.ModelAdmin):
     #Liste görünümünde
     list_display = ('type_auto_id','type_auto_date','type_name')
 
+class LicenseDataAdmin(admin.ModelAdmin):
+    #Liste görünümünde
+    list_display = ('license_auto_id','license_auto_date','license_code')
+
 admin.site.register(OerData, OerDataAdmin)
 admin.site.register(TypeData, TypeDataAdmin)
+admin.site.register(LicenseData, LicenseDataAdmin)

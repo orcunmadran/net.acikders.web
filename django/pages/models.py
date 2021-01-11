@@ -25,3 +25,11 @@ class TypeData(models.Model):
     type_auto_id = models.AutoField(verbose_name="OER ID", primary_key=True)
     type_auto_date = models.DateTimeField(verbose_name="Kayıt Tarihi ve Saati", auto_now=True)
     type_name = models.CharField(verbose_name="Ad", max_length=50)
+
+class LicenseData(models.Model):
+    license_auto_id = models.AutoField(verbose_name="License ID", primary_key=True)
+    license_auto_date = models.DateTimeField(verbose_name="Kayıt Tarihi ve Saati", auto_now=True)
+    license_code = models.CharField(verbose_name="Code", max_length=50)
+    license_icon = models.CharField(verbose_name="Icon", max_length=1000)
+    license_deed = models.CharField(verbose_name="URL", max_length=500)
+    license_info = models.CharField(verbose_name="Info", max_length=500)

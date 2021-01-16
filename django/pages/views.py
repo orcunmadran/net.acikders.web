@@ -83,7 +83,7 @@ def search_view(request):
 
     queryString = ""
     for keydata in keywords:
-        queryString += "(OE.oer_title LIKE '%{keyword}%' OR OE.oer_subject LIKE '%{keyword}%' OR OE.oer_description LIKE '%{keyword}%' OR OE.oer_creator LIKE '%{keyword}%') AND ".format(keyword = keydata)
+        queryString += "(OE.oer_title LIKE '%{keyword}%' OR OE.oer_subject LIKE '%{keyword}%' OR OE.oer_description LIKE '%{keyword}%' OR OE.oer_creator LIKE '%{keyword}%' OR OE.oer_publisher LIKE '%{keyword}%' OR OE.oer_contributor LIKE '%{keyword}%') AND ".format(keyword = keydata)
     queryString += "OE.oer_license = LI.license_code"
 
     rows = OerData.objects.raw('''

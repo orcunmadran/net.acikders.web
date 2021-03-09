@@ -9,6 +9,9 @@ import datetime
 def home_view(request, *args, **kwargs):
     return render(request, 'home.html')
 
+def about_view(request, *args, **kwargs):
+    return render(request, 'about.html')
+
 def schema_view(request, *args, **kwargs):
     return render(request, 'schema.html')
 

@@ -15,6 +15,9 @@ def about_view(request, *args, **kwargs):
 def schema_view(request, *args, **kwargs):
     return render(request, 'schema.html')
 
+def app01_view(request, *args, **kwargs):
+    return render(request, 'app01.html')
+
 def metaform_view(request, *args, **kwargs):
     return render(request, 'metaform.html')
 

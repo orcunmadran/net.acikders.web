@@ -11,16 +11,27 @@
         <label for="metaHTML">AEK Üst Veri Seti:</label>
         <textarea class="form-control" id="metaHTML" name="metaHTML" rows="5">
         <!-- Açık Ders NET Açık Eğitim Kaynağı (AEK) Üst Verisi -->
-        <p
-            xmlns:dct="http://purl.org/dc/terms/"
-            xmlns:dcx="http://purl.org/dcx/lrmi-terms/"
-            xmlns:cc="http://creativecommons.org/ns"
-            xmlns:adn="http://acikders.net/ns">
-            <a rel="dct:identifier" property="dct:title" href="{{ identifier }}">{{ title }}</a> açık eğitim kaynağı,
-            <span property="dct:creator">{{ creator }}</span> tarafından
-            <a rel="cc:license" href="{{ ccLicenseURL }}" target="_blank">{{ license }}</a> ile lisanslanmıştır.
-            {{ ccLicenseIcon }}
+        <p xmlns:dct="http://purl.org/dc/terms/" xmlns:dcx="http://purl.org/dcx/lrmi-terms/" xmlns:cc="http://creativecommons.org/ns">
+            <a rel="dct:identifier" property="dct:title" href="{{ identifier }}">{{ title }}</a> açık eğitim kaynağı, <span property="dct:creator">{{ creator }}</span> tarafından <a rel="cc:license" href="{{ ccLicenseURL }}" target="_blank">{{ license }}</a> ile lisanslanmıştır. {{ ccLicenseIcon }}
         </p>
+        <ul xmlns:dct="http://purl.org/dc/terms/" xmlns:dcx="http://purl.org/dcx/lrmi-terms/" xmlns:cc="http://creativecommons.org/ns" hidden>
+            <li property="dct:title" content="{{ title }}"><b>Başlık:</b> {{ title }}</li>
+            <li property="dct:subject" content="{{ subject }}"><b>Konu:</b> {{ subject }}</li>
+            <li property="dct:description" content="{{ description }}"><b>Tanım:</b> {{ description }}</li>
+            <li property="dct:type" content="{{ type }}"><b>Tip:</b> {{ type }}</li>
+            <li property="dct:creator" content="{{ creator }}"><b>Yaratıcı:</b> {{ creator }}</li>
+            <li property="dct:publisher" content="{{ publisher }}"><b>Yayıncı:</b> {{ publisher }}</li>
+            <li property="dct:contributor" content="{{ contributor }}"><b>Katkı Sağlayan:</b> {{ contributor }}</li>
+            <li property="cc:license" content="{{ license }}"><b>Lisans:</b> {{ license }}</li>
+            <li property="dct:date" content="{{ date }}"><b>Tarih:</b> {{ date }}</li>
+            <li property="dct:language" content="{{ language }}"><b>Dil:</b> {{ language }}</li>
+            <li property="dct:format" content="{{ format}}"><b>Biçim:</b> {{ format }}</li>
+            <li property="dct:identifier" content="{{ identifier }}"><b>Tanımlayıcı:</b> {{ identifier }}</li>
+            <li property="dcx:educationalAudience" content="{{ educationalAudience }}"><b>Hedef Kitle:</b> {{ educationalAudience }}</li>
+            <li property="dcx:educationalUse" content="{{ educationalUse }}"><b>Eğitsel Kullanım:</b> {{ educationalUse }}</li>
+            <li property="dcx:accessibilityFeature" content="{{ accessibilityFeature }}"><b>Erişilebilirlik Özelliği:</b> {{ accessibilityFeature }}</li>
+            <li property="dcx:timeRequired" content="{{ timeRequired }}"><b>İhtiyaç Duyulan Süre:</b> {{ timeRequired }}</li>
+        </ul>
         <!-- AEK üst veri seti ile ilgili detaylı bilgi için: acikders.net -->
         </textarea>
         <small id="descriptionHelp" class="form-text text-muted">Hazırlanmış olan üst veriyi kopyalayıp kendi sayfanıza yerleştirebilirsiniz.</small>

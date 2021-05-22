@@ -9,13 +9,15 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Yeniden Ara</button>
         </form>
    <!-- Search -->
-<p>acikders.net içinde <i>{% for keyword in keywords %} {{ keyword }} {% endfor %}</i> ile ilgili <strong>{{ rowstotal }} AEK</strong> var.</p>
+<div class="row">
+  <div class="col-9">
+<p>acikders.net içinde anahtar kelimelerinizin (<i>{% for keyword in keywords %} {{ keyword }} {% endfor %}</i>) tamamını içeren <strong>{{ rowstotal }} AEK</strong> var.</p>
   {% for row in rows %}
   <p><span class="lead">
     <a href="{{ row.oer_identifier }}" target="_blank">{{ row.oer_title }}</a>, {{ row.oer_creator }}</span> - {{ row.license_icon|safe }}<br>
     {{ row.summary }} ... <a data-toggle="collapse" href="#queryResults{{ row.oer_auto_id }}" aria-expanded="false" aria-controls="queryResults{{ row.oer_auto_id }}">(+)</a>
   </p>
-<div class="collapse" id="queryResults{{ row.oer_auto_id }}">
+  <div class="collapse" id="queryResults{{ row.oer_auto_id }}">
     <div class="card card-body">
         <strong>Özet:</strong> {{ row.oer_description }}
         <strong>Anahtar Kelimeler:</strong> {{ row.oer_subject }}
@@ -25,5 +27,25 @@
       <br>
   </div>
   {% endfor %}
-
+  <h3>acikders.net öneriyor...</h3>
+  {% for row2 in rows2 %}
+  <p><span class="lead">
+    <a href="{{ row2.oer_identifier }}" target="_blank">{{ row2.oer_title }}</a>, {{ row2.oer_creator }}</span> - {{ row2.license_icon|safe }}<br>
+    {{ row2.summary }} ... <a data-toggle="collapse" href="#queryResults2{{ row2.oer_auto_id }}" aria-expanded="false" aria-controls="queryResults{{ row2.oer_auto_id }}">(+)</a>
+  </p>
+  <div class="collapse" id="queryResults2{{ row2.oer_auto_id }}">
+    <div class="card card-body">
+        <strong>Özet:</strong> {{ row2.oer_description }}
+        <strong>Anahtar Kelimeler:</strong> {{ row2.oer_subject }}
+        <strong>Kullanım Şartları:</strong> {{ row2.license_info }}
+        <a href="{{ row2.oer_identifier }}" target="_blank">Açık eğitim kaynağına git!</a>
+    </div>
+      <br>
+  </div>
+  {% endfor %}
+  </div>
+  <div class="col-3">
+      <p><span class="lead">Aramanız ile ilgili ipuçları!</span></p>
+  </div>
+</div>
 {% endblock %}

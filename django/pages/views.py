@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import OerData
 import sqlite3
 import datetime
+import mlModel
 
 # Create your views here.
 
@@ -87,24 +88,61 @@ def search_view(request):
     q = request.GET.get('q')
     keywords = q.split()
 
+    # Standart Query
     queryString = ""
     for keydata in keywords:
         queryString += '''(
                         OE.oer_title LIKE '%{keyword}%' OR 
                         OE.oer_subject LIKE '%{keyword}%' OR 
-                        OE.oer_description LIKE '%{keyword}%' 
-                        OR OE.oer_creator LIKE '%{keyword}%' 
-                        OR OE.oer_publisher LIKE '%{keyword}%' OR 
+                        OE.oer_description LIKE '%{keyword}%' OR
+                        OE.oer_creator LIKE '%{keyword}%' OR
+                        OE.oer_publisher LIKE '%{keyword}%' OR 
                         OE.oer_contributor LIKE '%{keyword}%') AND '''.format(keyword = keydata)
-    queryString += "OE.oer_license = LI.license_code"
 
     rows = OerData.objects.raw('''
         SELECT OE.*, LI.*, SUBSTR(OE.oer_description,0,75) AS summary
         FROM pages_OerData OE, pages_LicenseData LI
-        WHERE {query}'''.format(query = queryString))
+        WHERE {query} OE.oer_license = LI.license_code
+        '''.format(query = queryString))
     rowstotal = (len(rows))
 
-    return render(request, 'search.html', {'rows': rows, 'keywords': keywords, 'rowstotal': rowstotal})
+    #ML Query
+    myModel = mlModel
+    kelimeVektoru = myModel.kelimeVektoru
+    aranacakKelimeler = []
+    cikartilanKelimeler = []
+
+    for kelime in keywords:
+        if kelime in kelimeVektoru:
+            aranacakKelimeler.append(kelime)
+        else:
+            cikartilanKelimeler.append(kelime)
+    print("- - - - -")
+    print("Aranacak Kelimeler : " + str(aranacakKelimeler))
+    print("Çıkartılan Kelimeler : " + str(cikartilanKelimeler))
+
+    if len(aranacakKelimeler) > 0:
+        oneriler = (kelimeVektoru.most_similar(positive=aranacakKelimeler))
+        print(oneriler)
+        sorguCumlesi = ""
+        for oneri in oneriler:
+            sorguCumlesi += '''
+                            OE.oer_title LIKE '%{anahtar}%' OR 
+                            OE.oer_subject LIKE '%{anahtar}%' OR 
+                            OE.oer_description LIKE '%{anahtar}%' OR
+                            OE.oer_creator LIKE '%{anahtar}%' OR
+                            OE.oer_publisher LIKE '%{anahtar}%' OR 
+                            OE.oer_contributor LIKE '%{anahtar}%' OR '''.format(anahtar = oneri[0])
+
+        rows2 = OerData.objects.raw('''
+            SELECT OE.*, LI.*, SUBSTR(OE.oer_description,0,75) AS summary
+            FROM pages_OerData OE, pages_LicenseData LI
+            WHERE ({query} OE.oer_contributor = 'X') AND OE.oer_license = LI.license_code
+            '''.format(query = sorguCumlesi))
+    else:
+        rows2 = ""
+
+    return render(request, 'search.html', {'rows': rows, 'rows2': rows2, 'keywords': keywords, 'rowstotal': rowstotal})
 
 def test_view(request):
 

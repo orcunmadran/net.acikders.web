@@ -19,6 +19,9 @@ def schema_view(request, *args, **kwargs):
 def app01_view(request, *args, **kwargs):
     return render(request, 'app01.html')
 
+def app02_view(request, *args, **kwargs):
+    return render(request, 'app02.html')
+
 def metaform_view(request, *args, **kwargs):
     return render(request, 'metaform.html')
 
@@ -125,6 +128,7 @@ def search_view(request):
         oneriler = (kelimeVektoru.most_similar(positive=aranacakKelimeler))
         print(oneriler)
         sorguCumlesi = ""
+        oneriListesi = []
         for oneri in oneriler:
             sorguCumlesi += '''
                             OE.oer_title LIKE '%{anahtar}%' OR 
@@ -133,6 +137,7 @@ def search_view(request):
                             OE.oer_creator LIKE '%{anahtar}%' OR
                             OE.oer_publisher LIKE '%{anahtar}%' OR 
                             OE.oer_contributor LIKE '%{anahtar}%' OR '''.format(anahtar = oneri[0])
+            oneriListesi.append(oneri[0])
 
         rows2 = OerData.objects.raw('''
             SELECT OE.*, LI.*, SUBSTR(OE.oer_description,0,75) AS summary
@@ -142,7 +147,7 @@ def search_view(request):
     else:
         rows2 = ""
 
-    return render(request, 'search.html', {'rows': rows, 'rows2': rows2, 'keywords': keywords, 'rowstotal': rowstotal})
+    return render(request, 'search.html', {'rows': rows, 'rows2': rows2, 'keywords': keywords, 'rowstotal': rowstotal, 'oneriListesi': oneriListesi})
 
 def test_view(request):
 

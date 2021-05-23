@@ -26,6 +26,7 @@ urlpatterns = [
     path('metadata/', views.metadata_view, name='metadata'),
     path('metabase/', views.metabase_view, name='metabase'),
     path('app01/', views.app01_view, name='app01'),
+    path('app02/', views.app02_view, name='app02'),
     path('search/', views.search_view, name='search'),
     path('basic/', views.basic_view, name='basic'),
     path('admin/', admin.site.urls),

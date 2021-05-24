@@ -146,6 +146,7 @@ def search_view(request):
             '''.format(query = sorguCumlesi))
     else:
         rows2 = ""
+        oneriListesi = ""
 
     return render(request, 'search.html', {'rows': rows, 'rows2': rows2, 'keywords': keywords, 'rowstotal': rowstotal, 'oneriListesi': oneriListesi})
 

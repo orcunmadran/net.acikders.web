@@ -1,4 +1,4 @@
-#SQLite3 kütüphanesi yükleniyor
+#SQLite3 kütüphanesi
 import sqlite3
 
 #veritabani.db adında bir SQLite3 veri tabanı dosyası oluşturuluyor.

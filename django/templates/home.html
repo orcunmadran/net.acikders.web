@@ -5,7 +5,7 @@
     <h1 class="mt-5">Açık Eğitim Kaynakları</h1>
     <!-- Search -->
         <form action="/search" method="get">
-            <p><input class="form-control form-control-lg" type="text" placeholder="Anahtar kelimenizi girin!" aria-label="Search" name="q"></p>
+            <p><input class="form-control form-control-lg" type="text" placeholder="Anahtar kelimenizi girin!" aria-label="Search" name="q" id="searchText" oninput="inputLowerCase()"></p>
             <p><button class="btn btn-primary" type="submit">acikders.net'te ara</button></p>
         </form>
     <!-- Search -->
